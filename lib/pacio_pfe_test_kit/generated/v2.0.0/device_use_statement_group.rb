@@ -56,5 +56,6 @@ read succeeds.
       test from: :pfe_v200_device_use_statement_read_test
       test from: :pfe_v200_device_use_statement_validation_test
       test from: :pfe_v200_device_use_statement_must_support_test
+    end
   end
 end

@@ -40,8 +40,9 @@
 - :names:
   - subject
   :expectation: SHALL
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
+  :names_not_must_support_or_mandatory:
+  - subject
+  :must_support_or_mandatory: false
 - :names:
   - status
   :expectation: SHALL
@@ -97,12 +98,12 @@
 :search_definitions:
   :subject:
     :paths:
-    - subject
+    - Condition.subject
     :full_paths:
-    - ServiceRequest.subject
+    - Condition.subject
     :comparators: {}
     :values: []
-    :type: Reference
+    :type: reference
     :contains_multiple: false
     :multiple_or: MAY
   :patient:

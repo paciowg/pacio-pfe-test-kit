@@ -106,5 +106,6 @@ read succeeds.
       test from: :pfe_v200_collection_read_test
       test from: :pfe_v200_collection_validation_test
       test from: :pfe_v200_collection_must_support_test
+    end
   end
 end

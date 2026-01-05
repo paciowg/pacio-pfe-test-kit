@@ -121,5 +121,6 @@ read succeeds.
       test from: :pfe_v200_condition_encounter_diagnosis_read_test
       test from: :pfe_v200_condition_encounter_diagnosis_validation_test
       test from: :pfe_v200_condition_encounter_diagnosis_must_support_test
+    end
   end
 end

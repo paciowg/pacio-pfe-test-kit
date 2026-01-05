@@ -56,5 +56,6 @@ read succeeds.
       test from: :pfe_v200_nutrition_order_read_test
       test from: :pfe_v200_nutrition_order_validation_test
       test from: :pfe_v200_nutrition_order_must_support_test
+    end
   end
 end

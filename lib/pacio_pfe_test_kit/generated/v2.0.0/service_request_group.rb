@@ -109,5 +109,6 @@ read succeeds.
       test from: :pfe_v200_service_request_read_test
       test from: :pfe_v200_service_request_validation_test
       test from: :pfe_v200_service_request_must_support_test
+    end
   end
 end

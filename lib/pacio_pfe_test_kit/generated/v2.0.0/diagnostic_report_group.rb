@@ -106,5 +106,6 @@ read succeeds.
       test from: :pfe_v200_diagnostic_report_read_test
       test from: :pfe_v200_diagnostic_report_validation_test
       test from: :pfe_v200_diagnostic_report_must_support_test
+    end
   end
 end

@@ -106,5 +106,6 @@ read succeeds.
       test from: :pfe_v200_observation_clinicaltest_read_test
       test from: :pfe_v200_observation_clinicaltest_validation_test
       test from: :pfe_v200_observation_clinicaltest_must_support_test
+    end
   end
 end
