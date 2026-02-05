@@ -3,11 +3,15 @@ require 'us_core_test_kit/generator/search_definition_metadata_extractor'
 module PacioPFETestKit
   class Generator
     class SearchDefinitionMetadataExtractor < USCoreTestKit::Generator::SearchDefinitionMetadataExtractor
-                  def full_paths
+            def param
+        binding.pry
+        @param ||= ig_resources.search_param_by_resource_and_name(resource, name)
+      end
+      
+      def full_paths
         @full_paths ||=
           begin
-            binding.pry if param.nil?
-            path = param.expression.gsub(/.where\(resolve\((.*)/, '').gsub(/url = '/, 'url=\'')
+            path = param.expression.gsub(/.where\(resolve\((.*)/, '').gsub('url = \'', 'url=\'')
             path = path[1..-2] if path.start_with?('(') && path.end_with?(')')
             path.scan(/[. ]as[( ]([^)]*)[)]?/).flatten.map do |as_type|
               path.gsub!(/[. ]as[( ](#{as_type}[^)]*)[)]?/, as_type.upcase_first) if as_type.present?

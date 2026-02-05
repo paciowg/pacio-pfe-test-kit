@@ -59,7 +59,7 @@ module PacioPFETestKit
         else
           super
         end
-      end      
+      end
     end
   end
 end

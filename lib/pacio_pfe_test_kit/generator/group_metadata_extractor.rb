@@ -24,7 +24,7 @@ module PacioPFETestKit
       end
 
       def title
-        # TODO: Bundle profile is incorrectly named as "Transitions of Care Bundle". 
+        # TODO: Bundle profile is incorrectly named as "Transitions of Care Bundle".
         # After author fix the name, we could remove the "s?" in the regex
         title = (profile.title || profile.name).gsub(/Transition\s*of\s*Care\s*/, '').strip
         title = title.gsub(/US\s*Core\s*/, '').gsub(/\s*Profile/, '').strip
@@ -53,7 +53,7 @@ module PacioPFETestKit
         @must_support_metadata_extractor ||=
           MustSupportMetadataExtractor.new(profile_elements, profile, resource, ig_resources)
       end
-      
+
       def references
         @references ||=
           profile_elements

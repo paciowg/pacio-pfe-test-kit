@@ -9,7 +9,7 @@ module PacioPFETestKit
       class << self
         def generate(ig_metadata, base_output_dir)
           ig_metadata.groups
-                     .each { |group| new(group, base_output_dir).generate }
+            .each { |group| new(group, base_output_dir).generate }
         end
       end
 
