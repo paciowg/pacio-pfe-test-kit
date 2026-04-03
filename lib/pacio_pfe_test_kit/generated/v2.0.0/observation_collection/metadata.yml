@@ -1,15 +1,15 @@
 ---
-:name: pfe_observation_single
-:class_name: PfeObservationSingleSequence
+:name: pfe_collection
+:class_name: PfeCollectionSequence
 :version: v2.0.0
 :reformatted_version: v200
 :resource: Observation
-:profile_url: http://hl7.org/fhir/us/pacio-pfe/StructureDefinition/pfe-observation-single
-:profile_name: Personal Functioning and Engagement Single Observation
+:profile_url: http://hl7.org/fhir/us/pacio-pfe/StructureDefinition/pfe-collection
+:profile_name: Personal Functioning and Engagement Collection
 :profile_version: 2.0.0
-:title: Observation Personal Functioning and Engagement Single
+:title: Observation Personal Functioning and Engagement Collection
 :short_description: Verify support for the server capabilities required by the Personal
-  Functioning and Engagement Single Observation.
+  Functioning and Engagement Collection.
 :is_delayed: false
 :interactions:
 - :code: create
@@ -257,7 +257,14 @@
     :original_path: value[x]
   - :path: valueBoolean
     :original_path: value[x]
-  - :path: method
+  - :path: hasMember
+    :types:
+    - Reference
+    :target_profiles:
+    - http://hl7.org/fhir/us/pacio-pfe/StructureDefinition/pfe-observation-single
+  - :path: derivedFrom
+    :types:
+    - Reference
 :mandatory_elements:
 - Observation.status
 - Observation.category
@@ -321,41 +328,39 @@
   - http://hl7.org/fhir/StructureDefinition/DeviceMetric
 - :path: Observation.hasMember
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Observation
-  - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
-  - http://hl7.org/fhir/StructureDefinition/MolecularSequence
+  - http://hl7.org/fhir/us/pacio-pfe/StructureDefinition/pfe-observation-single
 - :path: Observation.derivedFrom
   :profiles:
   - http://hl7.org/fhir/us/core/StructureDefinition/us-core-questionnaireresponse|6.1.0
   - http://hl7.org/fhir/us/core/StructureDefinition/us-core-simple-observation|6.1.0
 :tests:
-- :id: pfe_v200_observation_single_patient_code_search_test
-  :file_name: observation_single_patient_code_search_test.rb
-- :id: pfe_v200_observation_single_date_search_test
-  :file_name: observation_single_date_search_test.rb
-- :id: pfe_v200_observation_single_code_search_test
-  :file_name: observation_single_code_search_test.rb
-- :id: pfe_v200_observation_single_patient_search_test
-  :file_name: observation_single_patient_search_test.rb
-- :id: pfe_v200_observation_single_category_search_test
-  :file_name: observation_single_category_search_test.rb
-- :id: pfe_v200_observation_single_status_search_test
-  :file_name: observation_single_status_search_test.rb
-- :id: pfe_v200_observation_single_patient_code_date_search_test
-  :file_name: observation_single_patient_code_date_search_test.rb
-- :id: pfe_v200_observation_single_patient_category_status_search_test
-  :file_name: observation_single_patient_category_status_search_test.rb
-- :id: pfe_v200_observation_single_patient_category_date_search_test
-  :file_name: observation_single_patient_category_date_search_test.rb
-- :id: pfe_v200_observation_single_patient_category_search_test
-  :file_name: observation_single_patient_category_search_test.rb
-- :id: pfe_v200_observation_single_read_test
-  :file_name: observation_single_read_test.rb
-- :id: pfe_v200_observation_single_validation_test
-  :file_name: observation_single_validation_test.rb
-- :id: pfe_v200_observation_single_must_support_test
-  :file_name: observation_single_must_support_test.rb
-:id: pfe_v200_observation_single
-:file_name: observation_single_group.rb
+- :id: pfe_v200_observation_collection_patient_code_search_test
+  :file_name: observation_collection_patient_code_search_test.rb
+- :id: pfe_v200_observation_collection_date_search_test
+  :file_name: observation_collection_date_search_test.rb
+- :id: pfe_v200_observation_collection_code_search_test
+  :file_name: observation_collection_code_search_test.rb
+- :id: pfe_v200_observation_collection_patient_search_test
+  :file_name: observation_collection_patient_search_test.rb
+- :id: pfe_v200_observation_collection_category_search_test
+  :file_name: observation_collection_category_search_test.rb
+- :id: pfe_v200_observation_collection_status_search_test
+  :file_name: observation_collection_status_search_test.rb
+- :id: pfe_v200_observation_collection_patient_code_date_search_test
+  :file_name: observation_collection_patient_code_date_search_test.rb
+- :id: pfe_v200_observation_collection_patient_category_status_search_test
+  :file_name: observation_collection_patient_category_status_search_test.rb
+- :id: pfe_v200_observation_collection_patient_category_date_search_test
+  :file_name: observation_collection_patient_category_date_search_test.rb
+- :id: pfe_v200_observation_collection_patient_category_search_test
+  :file_name: observation_collection_patient_category_search_test.rb
+- :id: pfe_v200_observation_collection_read_test
+  :file_name: observation_collection_read_test.rb
+- :id: pfe_v200_observation_collection_validation_test
+  :file_name: observation_collection_validation_test.rb
+- :id: pfe_v200_observation_collection_must_support_test
+  :file_name: observation_collection_must_support_test.rb
+:id: pfe_v200_observation_collection
+:file_name: observation_collection_group.rb
 :delayed_references: []
 :resource_conformance_expectation: SHALL

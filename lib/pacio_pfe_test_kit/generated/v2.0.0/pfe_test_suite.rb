@@ -3,7 +3,7 @@ require_relative '../../version'
 require_relative '../../custom_groups/v2.0.0/capability_statement_group'
 require_relative 'patient_group'
 require_relative 'observation_clinicaltest_group'
-require_relative 'collection_group'
+require_relative 'observation_collection_group'
 require_relative 'observation_single_group'
 require_relative 'diagnostic_report_group'
 require_relative 'condition_encounter_diagnosis_group'
@@ -62,7 +62,7 @@ module PacioPFETestKit
 
       group from: :pfe_v200_patient
       group from: :pfe_v200_observation_clinicaltest
-      group from: :pfe_v200_collection
+      group from: :pfe_v200_observation_collection
       group from: :pfe_v200_observation_single
       group from: :pfe_v200_diagnostic_report
       group from: :pfe_v200_condition_encounter_diagnosis

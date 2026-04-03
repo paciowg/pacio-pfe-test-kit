@@ -16,6 +16,18 @@ module PacioPFETestKit
           ['Condition', 'Observation']
         end
 
+        def prefix
+          'pfe'
+        end
+
+        def module_name
+          'PacioPFE'
+        end
+
+        def long_name
+          'PACIO PFE'
+        end
+
         def resource_has_multiple_profiles?(resource)
           resources_with_multiple_profiles.include? resource
         end
@@ -24,8 +36,10 @@ module PacioPFETestKit
           resource = group_metadata.resource
           return resource.underscore unless resource_has_multiple_profiles?(resource)
 
+          return 'observation_collection' if group_metadata.name == 'pfe_collection'
+          
           group_metadata.name
-            .delete_prefix("#{SHORT_NAME.downcase}_")
+            .delete_prefix("#{prefix}_")
             .underscore
         end
 

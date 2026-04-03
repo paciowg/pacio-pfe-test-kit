@@ -336,25 +336,25 @@
   - http://hl7.org/fhir/StructureDefinition/MolecularSequence
 :tests:
 - :id: pfe_v200_observation_clinicaltest_patient_code_search_test
-  :file_name: pfe_observation_clinicaltest_patient_code_search_test.rb
+  :file_name: observation_clinicaltest_patient_code_search_test.rb
 - :id: pfe_v200_observation_clinicaltest_date_search_test
-  :file_name: pfe_observation_clinicaltest_date_search_test.rb
+  :file_name: observation_clinicaltest_date_search_test.rb
 - :id: pfe_v200_observation_clinicaltest_code_search_test
-  :file_name: pfe_observation_clinicaltest_code_search_test.rb
+  :file_name: observation_clinicaltest_code_search_test.rb
 - :id: pfe_v200_observation_clinicaltest_patient_search_test
-  :file_name: pfe_observation_clinicaltest_patient_search_test.rb
+  :file_name: observation_clinicaltest_patient_search_test.rb
 - :id: pfe_v200_observation_clinicaltest_category_search_test
-  :file_name: pfe_observation_clinicaltest_category_search_test.rb
+  :file_name: observation_clinicaltest_category_search_test.rb
 - :id: pfe_v200_observation_clinicaltest_status_search_test
-  :file_name: pfe_observation_clinicaltest_status_search_test.rb
+  :file_name: observation_clinicaltest_status_search_test.rb
 - :id: pfe_v200_observation_clinicaltest_patient_code_date_search_test
-  :file_name: pfe_observation_clinicaltest_patient_code_date_search_test.rb
+  :file_name: observation_clinicaltest_patient_code_date_search_test.rb
 - :id: pfe_v200_observation_clinicaltest_patient_category_status_search_test
-  :file_name: pfe_observation_clinicaltest_patient_category_status_search_test.rb
+  :file_name: observation_clinicaltest_patient_category_status_search_test.rb
 - :id: pfe_v200_observation_clinicaltest_patient_category_date_search_test
-  :file_name: pfe_observation_clinicaltest_patient_category_date_search_test.rb
+  :file_name: observation_clinicaltest_patient_category_date_search_test.rb
 - :id: pfe_v200_observation_clinicaltest_patient_category_search_test
-  :file_name: pfe_observation_clinicaltest_patient_category_search_test.rb
+  :file_name: observation_clinicaltest_patient_category_search_test.rb
 - :id: pfe_v200_observation_clinicaltest_read_test
   :file_name: observation_clinicaltest_read_test.rb
 - :id: pfe_v200_observation_clinicaltest_validation_test

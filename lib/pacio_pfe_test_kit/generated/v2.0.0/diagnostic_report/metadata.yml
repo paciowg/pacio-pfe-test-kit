@@ -497,25 +497,25 @@
   - http://hl7.org/fhir/StructureDefinition/Media
 :tests:
 - :id: pfe_v200_diagnostic_report_patient_search_test
-  :file_name: pfe_narrative_history_of_status_patient_search_test.rb
+  :file_name: diagnostic_report_patient_search_test.rb
 - :id: pfe_v200_diagnostic_report_date_search_test
-  :file_name: pfe_narrative_history_of_status_date_search_test.rb
+  :file_name: diagnostic_report_date_search_test.rb
 - :id: pfe_v200_diagnostic_report_category_search_test
-  :file_name: pfe_narrative_history_of_status_category_search_test.rb
+  :file_name: diagnostic_report_category_search_test.rb
 - :id: pfe_v200_diagnostic_report_status_search_test
-  :file_name: pfe_narrative_history_of_status_status_search_test.rb
+  :file_name: diagnostic_report_status_search_test.rb
 - :id: pfe_v200_diagnostic_report_code_search_test
-  :file_name: pfe_narrative_history_of_status_code_search_test.rb
+  :file_name: diagnostic_report_code_search_test.rb
 - :id: pfe_v200_diagnostic_report_patient_code_date_search_test
-  :file_name: pfe_narrative_history_of_status_patient_code_date_search_test.rb
+  :file_name: diagnostic_report_patient_code_date_search_test.rb
 - :id: pfe_v200_diagnostic_report_patient_status_search_test
-  :file_name: pfe_narrative_history_of_status_patient_status_search_test.rb
+  :file_name: diagnostic_report_patient_status_search_test.rb
 - :id: pfe_v200_diagnostic_report_patient_category_date_search_test
-  :file_name: pfe_narrative_history_of_status_patient_category_date_search_test.rb
+  :file_name: diagnostic_report_patient_category_date_search_test.rb
 - :id: pfe_v200_diagnostic_report_patient_category_search_test
-  :file_name: pfe_narrative_history_of_status_patient_category_search_test.rb
+  :file_name: diagnostic_report_patient_category_search_test.rb
 - :id: pfe_v200_diagnostic_report_patient_code_search_test
-  :file_name: pfe_narrative_history_of_status_patient_code_search_test.rb
+  :file_name: diagnostic_report_patient_code_search_test.rb
 - :id: pfe_v200_diagnostic_report_read_test
   :file_name: diagnostic_report_read_test.rb
 - :id: pfe_v200_diagnostic_report_validation_test
