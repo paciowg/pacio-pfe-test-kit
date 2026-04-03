@@ -19,7 +19,7 @@ none are returned, the test is skipped.
 
       id :pfe_v200_service_request_authored_search_test
       def self.properties
-        @properties ||= USCoreTestKit::SearchTestProperties.new(
+        @properties ||= PacioInfernoCore::SearchTestProperties.new(
           resource_type: 'ServiceRequest',
           search_param_names: ['authored'],
           possible_status_search: true,

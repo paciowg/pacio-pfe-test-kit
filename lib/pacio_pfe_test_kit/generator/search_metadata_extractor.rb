@@ -1,9 +1,9 @@
-require 'us_core_test_kit/generator/search_metadata_extractor'
+require 'pacio_inferno_core/generator/search_metadata_extractor'
 require_relative 'search_definition_metadata_extractor'
 
 module PacioPFETestKit
   class Generator
-    class SearchMetadataExtractor < USCoreTestKit::Generator::SearchMetadataExtractor
+    class SearchMetadataExtractor < PacioInfernoCore::Generator::SearchMetadataExtractor
       def search_definitions
         search_param_names.each_with_object({}) do |name, definitions|
           definitions[name.to_sym] =

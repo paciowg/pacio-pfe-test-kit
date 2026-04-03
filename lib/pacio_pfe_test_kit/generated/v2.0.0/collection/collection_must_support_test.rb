@@ -1,9 +1,9 @@
-require 'us_core_test_kit/must_support_test'
+require 'pacio_inferno_core/must_support_test'
 
 module PacioPFETestKit
   module PacioPFEV200
     class CollectionMustSupportTest < Inferno::Test
-      include USCoreTestKit::MustSupportTest
+      include PacioInfernoCore::MustSupportTest
 
       title 'All must support elements are provided in the Observation resources returned'
 

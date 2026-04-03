@@ -19,7 +19,7 @@ none are returned, the test is skipped.
 
       id :pfe_v200_condition_encounter_diagnosis_recorded_date_search_test
       def self.properties
-        @properties ||= USCoreTestKit::SearchTestProperties.new(
+        @properties ||= PacioInfernoCore::SearchTestProperties.new(
           resource_type: 'Condition',
           search_param_names: ['recorded-date'],
           possible_status_search: true,

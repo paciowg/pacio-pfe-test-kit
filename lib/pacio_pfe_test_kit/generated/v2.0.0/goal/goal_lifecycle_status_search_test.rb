@@ -19,7 +19,7 @@ none are returned, the test is skipped.
 
       id :pfe_v200_goal_lifecycle_status_search_test
       def self.properties
-        @properties ||= USCoreTestKit::SearchTestProperties.new(
+        @properties ||= PacioInfernoCore::SearchTestProperties.new(
           resource_type: 'Goal',
           search_param_names: ['lifecycle-status']
         )

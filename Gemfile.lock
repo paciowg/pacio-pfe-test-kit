@@ -1,4 +1,10 @@
 PATH
+  remote: ../pacio-inferno-core
+  specs:
+    pacio_inferno_core (1.0.0)
+      inferno_core (~> 1.0, >= 1.0.2)
+
+PATH
   remote: .
   specs:
     pacio_pfe_test_kit (1.0.0)
@@ -390,6 +396,7 @@ DEPENDENCIES
   database_cleaner-sequel (~> 1.8)
   debug
   factory_bot (~> 6.1)
+  pacio_inferno_core!
   pacio_pfe_test_kit!
   rack-test
   rspec (~> 3.10)

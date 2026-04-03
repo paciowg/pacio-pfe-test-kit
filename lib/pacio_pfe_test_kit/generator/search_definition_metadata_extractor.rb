@@ -1,13 +1,8 @@
-require 'us_core_test_kit/generator/search_definition_metadata_extractor'
+require 'pacio_inferno_core/generator/search_definition_metadata_extractor'
 
 module PacioPFETestKit
   class Generator
-    class SearchDefinitionMetadataExtractor < USCoreTestKit::Generator::SearchDefinitionMetadataExtractor
-            def param
-        binding.pry
-        @param ||= ig_resources.search_param_by_resource_and_name(resource, name)
-      end
-      
+    class SearchDefinitionMetadataExtractor < PacioInfernoCore::Generator::SearchDefinitionMetadataExtractor      
       def full_paths
         @full_paths ||=
           begin

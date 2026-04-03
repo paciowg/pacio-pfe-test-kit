@@ -35,7 +35,7 @@ requirement of PACIO PFE v2.0.0.
             description: 'Comma separated list of patient IDs that in sum contain all MUST SUPPORT elements'
 
       def self.properties
-        @properties ||= USCoreTestKit::SearchTestProperties.new(
+        @properties ||= PacioInfernoCore::SearchTestProperties.new(
           first_search: true,
           resource_type: 'DiagnosticReport',
           search_param_names: ['patient'],

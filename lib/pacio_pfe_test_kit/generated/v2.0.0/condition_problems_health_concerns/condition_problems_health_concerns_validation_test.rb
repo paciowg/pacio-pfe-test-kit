@@ -1,9 +1,9 @@
-require 'us_core_test_kit/validation_test'
+require 'pacio_inferno_core/validation_test'
 
 module PacioPFETestKit
   module PacioPFEV200
     class ConditionProblemsHealthConcernsValidationTest < Inferno::Test
-      include USCoreTestKit::ValidationTest
+      include PacioInfernoCore::ValidationTest
 
       id :pfe_v200_condition_problems_health_concerns_validation_test
 

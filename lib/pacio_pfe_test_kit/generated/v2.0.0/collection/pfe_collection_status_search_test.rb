@@ -19,7 +19,7 @@ none are returned, the test is skipped.
 
       id :pfe_v200_collection_status_search_test
       def self.properties
-        @properties ||= USCoreTestKit::SearchTestProperties.new(
+        @properties ||= PacioInfernoCore::SearchTestProperties.new(
           resource_type: 'Observation',
           search_param_names: ['status'],
           multiple_or_search_params: ['status']

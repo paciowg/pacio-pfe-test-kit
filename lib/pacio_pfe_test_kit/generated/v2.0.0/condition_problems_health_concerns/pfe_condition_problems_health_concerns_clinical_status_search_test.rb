@@ -19,7 +19,7 @@ none are returned, the test is skipped.
 
       id :pfe_v200_condition_problems_health_concerns_clinical_status_search_test
       def self.properties
-        @properties ||= USCoreTestKit::SearchTestProperties.new(
+        @properties ||= PacioInfernoCore::SearchTestProperties.new(
           resource_type: 'Condition',
           search_param_names: ['clinical-status'],
           token_search_params: ['clinical-status']

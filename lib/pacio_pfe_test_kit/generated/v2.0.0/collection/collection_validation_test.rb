@@ -1,9 +1,9 @@
-require 'us_core_test_kit/validation_test'
+require 'pacio_inferno_core/validation_test'
 
 module PacioPFETestKit
   module PacioPFEV200
     class CollectionValidationTest < Inferno::Test
-      include USCoreTestKit::ValidationTest
+      include PacioInfernoCore::ValidationTest
 
       id :pfe_v200_collection_validation_test
 

@@ -23,7 +23,7 @@ none are returned, the test is skipped.
             description: 'Comma separated list of patient IDs that in sum contain all MUST SUPPORT elements'
 
       def self.properties
-        @properties ||= USCoreTestKit::SearchTestProperties.new(
+        @properties ||= PacioInfernoCore::SearchTestProperties.new(
           resource_type: 'DiagnosticReport',
           search_param_names: ['patient', 'category'],
           possible_status_search: true,

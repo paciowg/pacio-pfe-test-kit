@@ -19,7 +19,7 @@ none are returned, the test is skipped.
 
       id :pfe_v200_observation_single_date_search_test
       def self.properties
-        @properties ||= USCoreTestKit::SearchTestProperties.new(
+        @properties ||= PacioInfernoCore::SearchTestProperties.new(
           resource_type: 'Observation',
           search_param_names: ['date'],
           possible_status_search: true,

@@ -21,7 +21,7 @@ none are returned, the test is skipped.
       optional
 
       def self.properties
-        @properties ||= USCoreTestKit::SearchTestProperties.new(
+        @properties ||= PacioInfernoCore::SearchTestProperties.new(
           resource_type: 'ServiceRequest',
           search_param_names: ['subject'],
           possible_status_search: true

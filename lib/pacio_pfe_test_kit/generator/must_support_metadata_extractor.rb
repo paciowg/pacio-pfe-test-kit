@@ -1,8 +1,8 @@
-require 'us_core_test_kit/generator/must_support_metadata_extractor'
+require 'pacio_inferno_core/generator/must_support_metadata_extractor'
 
 module PacioPFETestKit
   class Generator
-    class MustSupportMetadataExtractor < USCoreTestKit::Generator::MustSupportMetadataExtractor
+    class MustSupportMetadataExtractor < PacioInfernoCore::Generator::MustSupportMetadataExtractor
       def all_must_support_elements
         profile_elements.select(&:mustSupport)
       end
