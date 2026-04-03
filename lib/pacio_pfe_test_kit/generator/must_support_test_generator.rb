@@ -16,22 +16,6 @@ module PacioPFETestKit
       def template
         @template ||= File.read(File.join(__dir__, 'templates', 'must_support.rb.erb'))
       end
-
-      def profile_identifier
-        Naming.snake_case_for_profile(group_metadata)
-      end
-
-      def test_id
-        "pfe_#{group_metadata.reformatted_version}_#{profile_identifier}_must_support_test"
-      end
-
-      def class_name
-        "#{Naming.upper_camel_case_for_profile(group_metadata)}MustSupportTest"
-      end
-
-      def module_name
-        "PacioPFE#{group_metadata.reformatted_version.upcase}"
-      end
     end
   end
 end

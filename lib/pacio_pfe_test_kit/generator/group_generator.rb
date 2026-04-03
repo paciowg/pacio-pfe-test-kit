@@ -17,22 +17,6 @@ module PacioPFETestKit
         @template ||= File.read(File.join(__dir__, 'templates', 'group.rb.erb'))
       end
 
-      def class_name
-        "#{Naming.upper_camel_case_for_profile(group_metadata)}Group"
-      end
-
-      def module_name
-        "PacioPFE#{group_metadata.reformatted_version.upcase}"
-      end
-
-      def profile_identifier
-        Naming.snake_case_for_profile(group_metadata)
-      end
-
-      def group_id
-        "pfe_#{group_metadata.reformatted_version}_#{profile_identifier}"
-      end
-
       def add_special_tests
         # There is no special case for PFE IG.
       end

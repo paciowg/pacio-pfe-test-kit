@@ -1,8 +1,8 @@
 require_relative '../../../search_test'
 require_relative '../../../generator/group_metadata'
 
-module PacioPFETestKit
-  module <%= module_name %>
+module <%= naming.module_name %>TestKit
+  module <%= module_name_with_version %>
     class <%= class_name %> < Inferno::Test
       include PacioPFETestKit::SearchTest
 
