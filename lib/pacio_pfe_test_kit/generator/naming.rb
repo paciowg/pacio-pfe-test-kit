@@ -1,9 +1,6 @@
 module PacioPFETestKit
   class Generator
     module Naming
-      SHORT_NAME = 'PFE'.freeze
-      # From PFE
-
       # From US Core
       PATIENT = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient'
 
