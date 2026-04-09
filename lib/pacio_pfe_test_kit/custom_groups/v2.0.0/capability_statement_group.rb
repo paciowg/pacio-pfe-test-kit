@@ -60,9 +60,9 @@ module PacioPFETestKit
            config: {
              options: { minimum_allowed_version: OpenSSL::SSL::TLS1_2_VERSION }
            }
-      test from: :us_core_conformance_support
-      test from: :us_core_fhir_version
-      test from: :us_core_json_support
+      test from: :pacio_inferno_core_conformance_support
+      test from: :pacio_inferno_core_fhir_version
+      test from: :pacio_inferno_core_json_support
       test from: :pfe_profile_support do
         title 'Capability Statement lists support for required PACIO PFE Profiles'
         description %(
