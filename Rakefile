@@ -13,3 +13,12 @@ namespace :db do
     Inferno::Utils::Migration.new.run
   end
 end
+
+namespace :pacio_pfe do
+  desc 'Generate tests'
+  task :generate do
+    require_relative 'lib/pacio_pfe_test_kit/generator'
+
+    PacioPFETestKit::Generator.generate
+  end
+end

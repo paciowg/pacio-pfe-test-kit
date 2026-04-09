@@ -1,0 +1,415 @@
+---
+:name: pfe_condition_encounter_diagnosis
+:class_name: PfeConditionEncounterDiagnosisSequence
+:version: v2.0.0
+:reformatted_version: v200
+:resource: Condition
+:profile_url: http://hl7.org/fhir/us/pacio-pfe/StructureDefinition/pfe-condition-encounter-diagnosis
+:profile_name: Personal Functioning and Engagement Condition Encounter Diagnosis Profile
+:profile_version: 2.0.0
+:title: Condition Personal Functioning and Engagement Encounter Diagnosis
+:short_description: Verify support for the server capabilities required by the Personal
+  Functioning and Engagement Condition Encounter Diagnosis Profile.
+:is_delayed: false
+:interactions:
+- :code: create
+  :expectation: SHOULD
+- :code: update
+  :expectation: SHOULD
+- :code: delete
+  :expectation: SHOULD
+- :code: read
+  :expectation: SHOULD
+- :code: vread
+  :expectation: MAY
+- :code: history-instance
+  :expectation: MAY
+- :code: history-type
+  :expectation: MAY
+- :code: search-type
+  :expectation: MAY
+- :code: patch
+  :expectation: MAY
+:operations: []
+:searches:
+- :names:
+  - patient
+  :expectation: SHALL
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :names:
+  - clinical-status
+  :expectation: SHALL
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :names:
+  - abatement-date
+  :expectation: SHALL
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :names:
+  - onset-date
+  :expectation: SHALL
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :names:
+  - recorded-date
+  :expectation: SHALL
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :names:
+  - subject
+  :expectation: SHALL
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :names:
+  - code
+  :expectation: SHALL
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :names:
+  - encounter
+  :expectation: SHALL
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :expectation: SHOULD
+  :names:
+  - patient
+  - recorded-date
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :expectation: SHOULD
+  :names:
+  - patient
+  - asserted-date
+  :names_not_must_support_or_mandatory:
+  - asserted-date
+  :must_support_or_mandatory: false
+- :expectation: SHOULD
+  :names:
+  - patient
+  - category
+  - clinical-status
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :expectation: SHOULD
+  :names:
+  - patient
+  - onset-date
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :expectation: SHOULD
+  :names:
+  - patient
+  - abatement-date
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :expectation: SHOULD
+  :names:
+  - patient
+  - clinical-status
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :expectation: SHOULD
+  :names:
+  - patient
+  - category
+  - encounter
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :expectation: SHOULD
+  :names:
+  - patient
+  - code
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :expectation: SHALL
+  :names:
+  - patient
+  - category
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+:search_definitions:
+  :clinical-status:
+    :paths:
+    - clinicalStatus
+    :full_paths:
+    - Condition.clinicalStatus
+    :comparators: {}
+    :values:
+    - active
+    - recurrence
+    - relapse
+    - inactive
+    - remission
+    - resolved
+    :type: CodeableConcept
+    :contains_multiple: false
+    :multiple_or: MAY
+  :abatement-date:
+    :paths:
+    - abatementDateTime
+    - abatementPeriod
+    :full_paths:
+    - Condition.abatementDateTime
+    - Condition.abatementPeriod
+    :comparators:
+      :eq: MAY
+      :ne: MAY
+      :gt: SHALL
+      :ge: SHALL
+      :lt: SHALL
+      :le: SHALL
+      :sa: MAY
+      :eb: MAY
+      :ap: MAY
+    :values: []
+    :type: date
+    :contains_multiple: false
+    :multiple_or: MAY
+  :onset-date:
+    :paths:
+    - onsetDateTime
+    - onsetPeriod
+    :full_paths:
+    - Condition.onsetDateTime
+    - Condition.onsetPeriod
+    :comparators:
+      :eq: MAY
+      :ne: MAY
+      :gt: SHALL
+      :ge: SHALL
+      :lt: SHALL
+      :le: SHALL
+      :sa: MAY
+      :eb: MAY
+      :ap: MAY
+    :values: []
+    :type: date
+    :contains_multiple: false
+    :multiple_or: MAY
+  :recorded-date:
+    :paths:
+    - recordedDate
+    :full_paths:
+    - Condition.recordedDate
+    :comparators:
+      :eq: MAY
+      :ne: MAY
+      :gt: SHALL
+      :ge: SHALL
+      :lt: SHALL
+      :le: SHALL
+      :sa: MAY
+      :eb: MAY
+      :ap: MAY
+    :values: []
+    :type: dateTime
+    :contains_multiple: false
+    :multiple_or: MAY
+  :subject:
+    :paths:
+    - subject
+    :full_paths:
+    - Condition.subject
+    :comparators: {}
+    :values: []
+    :type: Reference
+    :contains_multiple: false
+    :multiple_or: MAY
+  :patient:
+    :paths:
+    - subject
+    :full_paths:
+    - Condition.subject
+    :comparators: {}
+    :values: []
+    :type: Reference
+    :contains_multiple: false
+    :multiple_or: MAY
+  :code:
+    :paths:
+    - code
+    :full_paths:
+    - Condition.code
+    :comparators: {}
+    :values: []
+    :type: CodeableConcept
+    :contains_multiple: false
+    :multiple_or: MAY
+  :encounter:
+    :paths:
+    - encounter
+    :full_paths:
+    - Condition.encounter
+    :comparators: {}
+    :values: []
+    :type: Reference
+    :contains_multiple: false
+    :multiple_or: MAY
+  :asserted-date:
+    :paths:
+    - extension.where(url='http://hl7.org/fhir/StructureDefinition/condition-assertedDate').valueDateTime
+    :full_paths:
+    - Condition.extension.where(url='http://hl7.org/fhir/StructureDefinition/condition-assertedDate').valueDateTime
+    :comparators:
+      :eq: MAY
+      :ne: MAY
+      :gt: SHALL
+      :ge: SHALL
+      :lt: SHALL
+      :le: SHALL
+      :sa: MAY
+      :eb: MAY
+      :ap: MAY
+    :values: []
+    :type: date
+    :contains_multiple: false
+    :multiple_or: MAY
+  :category:
+    :paths:
+    - category
+    :full_paths:
+    - Condition.category
+    :comparators: {}
+    :values:
+    - encounter-diagnosis
+    :type: CodeableConcept
+    :contains_multiple: true
+    :multiple_or: MAY
+:include_params:
+- Condition.identifier
+- Condition.subject
+- Condition.patient
+- Condition.bodySite
+- Condition.asserter
+- Condition.recordedDate
+- Condition.code
+- Condition.encounter
+:revincludes: []
+:required_concepts:
+- clinicalStatus
+- verificationStatus
+:must_supports:
+  :extensions:
+  - :id: Condition.extension:assertedDate
+    :path: extension
+    :url: http://hl7.org/fhir/StructureDefinition/condition-assertedDate
+  :slices:
+  - :slice_id: Condition.category:us-core
+    :slice_name: us-core
+    :path: category
+    :discriminator:
+      :type: patternCodeableConcept
+      :path: ''
+      :code: encounter-diagnosis
+      :system: http://terminology.hl7.org/CodeSystem/condition-category
+  :elements:
+  - :path: clinicalStatus
+  - :path: verificationStatus
+  - :path: category
+  - :path: code
+  - :path: bodySite
+  - :path: subject
+    :types:
+    - Reference
+    :target_profiles:
+    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient
+  - :path: encounter
+    :types:
+    - Reference
+    :target_profiles:
+    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter
+  - :path: onsetDateTime
+    :original_path: onset[x]
+  - :path: abatementDateTime
+    :original_path: abatement[x]
+  - :path: recordedDate
+  - :path: asserter
+    :types:
+    - Reference
+:mandatory_elements:
+- Condition.category
+- Condition.code
+- Condition.subject
+:bindings:
+- :type: CodeableConcept
+  :strength: required
+  :system: http://hl7.org/fhir/ValueSet/condition-clinical
+  :path: clinicalStatus
+- :type: CodeableConcept
+  :strength: required
+  :system: http://hl7.org/fhir/ValueSet/condition-ver-status
+  :path: verificationStatus
+:references:
+- :path: Condition.subject
+  :profiles:
+  - http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient
+- :path: Condition.encounter
+  :profiles:
+  - http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter
+- :path: Condition.recorder
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/Practitioner
+  - http://hl7.org/fhir/StructureDefinition/PractitionerRole
+  - http://hl7.org/fhir/StructureDefinition/Patient
+  - http://hl7.org/fhir/StructureDefinition/RelatedPerson
+- :path: Condition.asserter
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/Practitioner
+  - http://hl7.org/fhir/StructureDefinition/PractitionerRole
+  - http://hl7.org/fhir/StructureDefinition/Patient
+  - http://hl7.org/fhir/StructureDefinition/RelatedPerson
+- :path: Condition.stage.assessment
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/ClinicalImpression
+  - http://hl7.org/fhir/StructureDefinition/DiagnosticReport
+  - http://hl7.org/fhir/StructureDefinition/Observation
+- :path: Condition.evidence.detail
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/Resource
+:tests:
+- :id: pfe_v200_condition_encounter_diagnosis_patient_search_test
+  :file_name: condition_encounter_diagnosis_patient_search_test.rb
+- :id: pfe_v200_condition_encounter_diagnosis_clinical_status_search_test
+  :file_name: condition_encounter_diagnosis_clinical_status_search_test.rb
+- :id: pfe_v200_condition_encounter_diagnosis_abatement_date_search_test
+  :file_name: condition_encounter_diagnosis_abatement_date_search_test.rb
+- :id: pfe_v200_condition_encounter_diagnosis_onset_date_search_test
+  :file_name: condition_encounter_diagnosis_onset_date_search_test.rb
+- :id: pfe_v200_condition_encounter_diagnosis_recorded_date_search_test
+  :file_name: condition_encounter_diagnosis_recorded_date_search_test.rb
+- :id: pfe_v200_condition_encounter_diagnosis_subject_search_test
+  :file_name: condition_encounter_diagnosis_subject_search_test.rb
+- :id: pfe_v200_condition_encounter_diagnosis_code_search_test
+  :file_name: condition_encounter_diagnosis_code_search_test.rb
+- :id: pfe_v200_condition_encounter_diagnosis_encounter_search_test
+  :file_name: condition_encounter_diagnosis_encounter_search_test.rb
+- :id: pfe_v200_condition_encounter_diagnosis_patient_recorded_date_search_test
+  :file_name: condition_encounter_diagnosis_patient_recorded_date_search_test.rb
+- :id: pfe_v200_condition_encounter_diagnosis_patient_asserted_date_search_test
+  :file_name: condition_encounter_diagnosis_patient_asserted_date_search_test.rb
+- :id: pfe_v200_condition_encounter_diagnosis_patient_category_clinical_status_search_test
+  :file_name: condition_encounter_diagnosis_patient_category_clinical_status_search_test.rb
+- :id: pfe_v200_condition_encounter_diagnosis_patient_onset_date_search_test
+  :file_name: condition_encounter_diagnosis_patient_onset_date_search_test.rb
+- :id: pfe_v200_condition_encounter_diagnosis_patient_abatement_date_search_test
+  :file_name: condition_encounter_diagnosis_patient_abatement_date_search_test.rb
+- :id: pfe_v200_condition_encounter_diagnosis_patient_clinical_status_search_test
+  :file_name: condition_encounter_diagnosis_patient_clinical_status_search_test.rb
+- :id: pfe_v200_condition_encounter_diagnosis_patient_category_encounter_search_test
+  :file_name: condition_encounter_diagnosis_patient_category_encounter_search_test.rb
+- :id: pfe_v200_condition_encounter_diagnosis_patient_code_search_test
+  :file_name: condition_encounter_diagnosis_patient_code_search_test.rb
+- :id: pfe_v200_condition_encounter_diagnosis_patient_category_search_test
+  :file_name: condition_encounter_diagnosis_patient_category_search_test.rb
+- :id: pfe_v200_condition_encounter_diagnosis_read_test
+  :file_name: condition_encounter_diagnosis_read_test.rb
+- :id: pfe_v200_condition_encounter_diagnosis_validation_test
+  :file_name: condition_encounter_diagnosis_validation_test.rb
+- :id: pfe_v200_condition_encounter_diagnosis_must_support_test
+  :file_name: condition_encounter_diagnosis_must_support_test.rb
+:id: pfe_v200_condition_encounter_diagnosis
+:file_name: condition_encounter_diagnosis_group.rb
+:delayed_references: []
+:resource_conformance_expectation: SHOULD

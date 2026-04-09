@@ -1,8 +1,16 @@
+GIT
+  remote: https://github.com/paciowg/pacio-inferno-core
+  revision: d8414b3d97d826f3a84eeddd0948648b451c80ce
+  specs:
+    pacio_inferno_core (1.0.0)
+      inferno_core (~> 1.0, >= 1.0.2)
+
 PATH
   remote: .
   specs:
-    inferno_template (0.0.0)
-      inferno_core (~> 1.0.5)
+    pacio_pfe_test_kit (1.0.0)
+      inferno_core (~> 1.0.6)
+      tls_test_kit (~> 1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -137,7 +145,7 @@ GEM
       domain_name (~> 0.5)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
-    inferno_core (1.0.5)
+    inferno_core (1.0.6)
       activesupport (~> 6.1.7.5)
       base62-rb (= 0.3.1)
       blueprinter (= 0.25.2)
@@ -331,6 +339,8 @@ GEM
     strings-ansi (0.2.0)
     thor (1.4.0)
     tilt (2.6.1)
+    tls_test_kit (1.0.0)
+      inferno_core (~> 1.0, >= 1.0.2)
     tsort (0.2.0)
     tty-color (0.6.0)
     tty-markdown (0.7.2)
@@ -368,7 +378,8 @@ DEPENDENCIES
   database_cleaner-sequel (~> 1.8)
   debug
   factory_bot (~> 6.1)
-  inferno_template!
+  pacio_inferno_core!
+  pacio_pfe_test_kit!
   rack-test
   rspec (~> 3.10)
   rubocop (~> 1.9)
