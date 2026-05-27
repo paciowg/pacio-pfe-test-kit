@@ -1,6 +1,5 @@
-GIT
-  remote: https://github.com/paciowg/pacio-inferno-core
-  revision: d8414b3d97d826f3a84eeddd0948648b451c80ce
+PATH
+  remote: ../pacio-inferno-core
   specs:
     pacio_inferno_core (1.0.0)
       inferno_core (~> 1.0, >= 1.0.2)

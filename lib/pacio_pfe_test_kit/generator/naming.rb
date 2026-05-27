@@ -17,6 +17,10 @@ module PacioPFETestKit
           'pfe'
         end
 
+        def implementation_guide_id
+          'hl7.fhir.us.pacio-pfe'
+        end
+
         def module_name
           'PacioPFE'
         end

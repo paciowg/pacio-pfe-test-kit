@@ -18,8 +18,6 @@ none are returned, the test is skipped.
       )
 
       id :pfe_v200_goal_subject_search_test
-      optional
-
       def self.properties
         @properties ||= PacioInfernoCore::SearchTestProperties.new(
           resource_type: 'Goal',

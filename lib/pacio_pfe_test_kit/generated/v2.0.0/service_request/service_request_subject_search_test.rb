@@ -18,8 +18,6 @@ none are returned, the test is skipped.
       )
 
       id :pfe_v200_service_request_subject_search_test
-      optional
-
       def self.properties
         @properties ||= PacioInfernoCore::SearchTestProperties.new(
           resource_type: 'ServiceRequest',

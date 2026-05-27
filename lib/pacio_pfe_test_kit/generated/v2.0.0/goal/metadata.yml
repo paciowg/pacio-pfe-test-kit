@@ -40,9 +40,8 @@
 - :names:
   - subject
   :expectation: SHALL
-  :names_not_must_support_or_mandatory:
-  - subject
-  :must_support_or_mandatory: false
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
 - :names:
   - target-date
   :expectation: SHALL
@@ -74,12 +73,12 @@
 :search_definitions:
   :subject:
     :paths:
-    - Condition.subject
+    - subject
     :full_paths:
-    - Condition.subject
+    - Goal.subject
     :comparators: {}
     :values: []
-    :type: reference
+    :type: Reference
     :contains_multiple: false
     :multiple_or: MAY
   :patient:
