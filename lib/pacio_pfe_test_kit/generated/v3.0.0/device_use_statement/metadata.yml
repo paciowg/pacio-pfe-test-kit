@@ -1,0 +1,96 @@
+---
+:name: pfe_use_of_device
+:class_name: PfeUseOfDeviceSequence
+:version: v3.0.0
+:reformatted_version: v300
+:resource: DeviceUseStatement
+:profile_url: http://hl7.org/fhir/us/pacio-pfe/StructureDefinition/pfe-use-of-device
+:profile_name: Personal Functioning and Engagement Use of Device
+:profile_version: 3.0.0-ballot
+:title: Personal Functioning and Engagement Use of Device
+:short_description: Verify support for the server capabilities required by the Personal
+  Functioning and Engagement Use of Device.
+:is_delayed: true
+:interactions:
+- :code: create
+  :expectation: SHOULD
+- :code: update
+  :expectation: SHOULD
+- :code: delete
+  :expectation: SHOULD
+- :code: read
+  :expectation: SHOULD
+- :code: vread
+  :expectation: MAY
+- :code: history-instance
+  :expectation: MAY
+- :code: history-type
+  :expectation: MAY
+- :code: search-type
+  :expectation: MAY
+- :code: patch
+  :expectation: MAY
+:operations: []
+:searches: []
+:search_definitions: {}
+:include_params:
+- DeviceUseStatement.subject
+- DeviceUseStatement.patient
+- DeviceUseStatement.device
+:revincludes: []
+:required_concepts: []
+:must_supports:
+  :extensions: []
+  :slices: []
+  :elements: []
+:mandatory_elements:
+- DeviceUseStatement.status
+- DeviceUseStatement.subject
+- DeviceUseStatement.device
+:bindings:
+- :type: code
+  :strength: required
+  :system: http://hl7.org/fhir/ValueSet/device-statement-status
+  :path: status
+:references:
+- :path: DeviceUseStatement.basedOn
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/ServiceRequest|4.0.1
+- :path: DeviceUseStatement.subject
+  :profiles:
+  - http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0
+- :path: DeviceUseStatement.derivedFrom
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/ServiceRequest|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Procedure|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Claim|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Observation|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/DocumentReference|4.0.1
+- :path: DeviceUseStatement.source
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
+- :path: DeviceUseStatement.device
+  :profiles:
+  - http://hl7.org/fhir/us/pacio-pfe/StructureDefinition/pfe-device|3.0.0-ballot
+- :path: DeviceUseStatement.reasonReference
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/Condition|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Observation|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/DiagnosticReport|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/DocumentReference|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Media|4.0.1
+:tests:
+- :id: pfe_v300_device_use_statement_read_test
+  :file_name: device_use_statement_read_test.rb
+- :id: pfe_v300_device_use_statement_validation_test
+  :file_name: device_use_statement_validation_test.rb
+- :id: pfe_v300_device_use_statement_must_support_test
+  :file_name: device_use_statement_must_support_test.rb
+:id: pfe_v300_device_use_statement
+:file_name: device_use_statement_group.rb
+:delayed_references: []
+:resource_conformance_expectation: SHOULD

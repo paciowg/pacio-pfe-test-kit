@@ -1,0 +1,322 @@
+---
+:name: pfe_service_request
+:class_name: PfeServiceRequestSequence
+:version: v3.0.0
+:reformatted_version: v300
+:resource: ServiceRequest
+:profile_url: http://hl7.org/fhir/us/pacio-pfe/StructureDefinition/pfe-service-request
+:profile_name: Personal Functioning and Engagement Service Request Profile
+:profile_version: 3.0.0-ballot
+:title: Personal Functioning and Engagement Service Request
+:short_description: Verify support for the server capabilities required by the Personal
+  Functioning and Engagement Service Request Profile.
+:is_delayed: false
+:interactions:
+- :code: create
+  :expectation: SHOULD
+- :code: update
+  :expectation: SHOULD
+- :code: delete
+  :expectation: SHOULD
+- :code: read
+  :expectation: SHOULD
+- :code: vread
+  :expectation: MAY
+- :code: history-instance
+  :expectation: MAY
+- :code: history-type
+  :expectation: MAY
+- :code: search-type
+  :expectation: MAY
+- :code: patch
+  :expectation: MAY
+:operations: []
+:searches:
+- :names:
+  - patient
+  :expectation: SHALL
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :names:
+  - status
+  :expectation: SHALL
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :names:
+  - code
+  :expectation: SHALL
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :names:
+  - category
+  :expectation: SHALL
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :names:
+  - authored
+  :expectation: SHALL
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :expectation: SHALL
+  :names:
+  - patient
+  - category
+  - authored
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :expectation: SHOULD
+  :names:
+  - patient
+  - status
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :expectation: SHALL
+  :names:
+  - patient
+  - category
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :expectation: SHOULD
+  :names:
+  - patient
+  - code
+  - authored
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :expectation: SHALL
+  :names:
+  - patient
+  - code
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+:search_definitions:
+  :patient:
+    :paths:
+    - subject
+    :full_paths:
+    - ServiceRequest.subject
+    :comparators: {}
+    :values: []
+    :type: Reference
+    :contains_multiple: false
+    :multiple_or: MAY
+  :status:
+    :paths:
+    - status
+    :full_paths:
+    - ServiceRequest.status
+    :comparators: {}
+    :values:
+    - draft
+    - active
+    - on-hold
+    - revoked
+    - completed
+    - entered-in-error
+    - unknown
+    :type: code
+    :contains_multiple: false
+    :multiple_or: SHALL
+  :code:
+    :paths:
+    - code
+    :full_paths:
+    - ServiceRequest.code
+    :comparators: {}
+    :values: []
+    :type: CodeableConcept
+    :contains_multiple: false
+    :multiple_or: SHOULD
+  :category:
+    :paths:
+    - category
+    :full_paths:
+    - ServiceRequest.category
+    :comparators: {}
+    :values:
+    - '108252007'
+    - '363679005'
+    - '409063005'
+    - '409073007'
+    - '387713003'
+    :type: CodeableConcept
+    :contains_multiple: true
+    :multiple_or: MAY
+  :authored:
+    :paths:
+    - authoredOn
+    :full_paths:
+    - ServiceRequest.authoredOn
+    :comparators:
+      :eq: MAY
+      :ne: MAY
+      :gt: SHALL
+      :ge: SHALL
+      :lt: SHALL
+      :le: SHALL
+      :sa: MAY
+      :eb: MAY
+      :ap: MAY
+    :values: []
+    :type: dateTime
+    :contains_multiple: false
+    :multiple_or: MAY
+:include_params:
+- ServiceRequest.identifier
+- ServiceRequest.subject
+- ServiceRequest.patient
+- ServiceRequest.status
+- ServiceRequest.code
+- ServiceRequest.requester
+- ServiceRequest.performer
+- ServiceRequest.reasonReference
+:revincludes: []
+:required_concepts:
+- category
+:must_supports:
+  :extensions: []
+  :slices:
+  - :slice_id: ServiceRequest.category:us-core
+    :slice_name: us-core
+    :path: category
+    :discriminator:
+      :type: requiredBinding
+      :path: ''
+      :values:
+      - :system: http://snomed.info/sct
+        :code: '108252007'
+      - :system: http://snomed.info/sct
+        :code: '363679005'
+      - :system: http://snomed.info/sct
+        :code: '409063005'
+      - :system: http://snomed.info/sct
+        :code: '409073007'
+      - :system: http://snomed.info/sct
+        :code: '387713003'
+  :elements:
+  - :path: status
+  - :path: intent
+  - :path: category
+  - :path: code
+  - :path: orderDetail
+  - :path: subject
+    :types:
+    - Reference
+    :target_profiles:
+    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|7.0.0
+  - :path: occurrencePeriod
+    :original_path: occurrence[x]
+  - :path: authoredOn
+  - :path: requester
+    :types:
+    - Reference
+    :target_profiles:
+    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|7.0.0
+  - :path: reasonReference
+    :types:
+    - Reference
+  - :path: note
+:mandatory_elements:
+- ServiceRequest.status
+- ServiceRequest.intent
+- ServiceRequest.code
+- ServiceRequest.subject
+:bindings:
+- :type: code
+  :strength: required
+  :system: http://hl7.org/fhir/ValueSet/request-status
+  :path: status
+- :type: code
+  :strength: required
+  :system: http://hl7.org/fhir/ValueSet/request-intent
+  :path: intent
+- :type: code
+  :strength: required
+  :system: http://hl7.org/fhir/ValueSet/request-priority
+  :path: priority
+:references:
+- :path: ServiceRequest.basedOn
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/CarePlan|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/ServiceRequest|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/MedicationRequest|4.0.1
+- :path: ServiceRequest.replaces
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/ServiceRequest|4.0.1
+- :path: ServiceRequest.subject
+  :profiles:
+  - http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|7.0.0
+- :path: ServiceRequest.encounter
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1
+- :path: ServiceRequest.requester
+  :profiles:
+  - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|7.0.0
+  - http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|7.0.0
+  - http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|7.0.0
+  - http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1
+  - http://hl7.org/fhir/us/core/StructureDefinition/us-core-relatedperson|7.0.0
+  - http://hl7.org/fhir/StructureDefinition/Device|4.0.1
+- :path: ServiceRequest.performer
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/CareTeam|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/HealthcareService|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Device|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
+- :path: ServiceRequest.locationReference
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/Location|4.0.1
+- :path: ServiceRequest.reasonReference
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/Condition|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Observation|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/DiagnosticReport|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/DocumentReference|4.0.1
+- :path: ServiceRequest.insurance
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/Coverage|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/ClaimResponse|4.0.1
+- :path: ServiceRequest.supportingInfo
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/Resource|4.0.1
+- :path: ServiceRequest.specimen
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/Specimen|4.0.1
+- :path: ServiceRequest.relevantHistory
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/Provenance|4.0.1
+:tests:
+- :id: pfe_v300_service_request_patient_search_test
+  :file_name: service_request_patient_search_test.rb
+- :id: pfe_v300_service_request_status_search_test
+  :file_name: service_request_status_search_test.rb
+- :id: pfe_v300_service_request_code_search_test
+  :file_name: service_request_code_search_test.rb
+- :id: pfe_v300_service_request_category_search_test
+  :file_name: service_request_category_search_test.rb
+- :id: pfe_v300_service_request_authored_search_test
+  :file_name: service_request_authored_search_test.rb
+- :id: pfe_v300_service_request_patient_category_authored_search_test
+  :file_name: service_request_patient_category_authored_search_test.rb
+- :id: pfe_v300_service_request_patient_status_search_test
+  :file_name: service_request_patient_status_search_test.rb
+- :id: pfe_v300_service_request_patient_category_search_test
+  :file_name: service_request_patient_category_search_test.rb
+- :id: pfe_v300_service_request_patient_code_authored_search_test
+  :file_name: service_request_patient_code_authored_search_test.rb
+- :id: pfe_v300_service_request_patient_code_search_test
+  :file_name: service_request_patient_code_search_test.rb
+- :id: pfe_v300_service_request_read_test
+  :file_name: service_request_read_test.rb
+- :id: pfe_v300_service_request_validation_test
+  :file_name: service_request_validation_test.rb
+- :id: pfe_v300_service_request_must_support_test
+  :file_name: service_request_must_support_test.rb
+:id: pfe_v300_service_request
+:file_name: service_request_group.rb
+:delayed_references: []
+:resource_conformance_expectation: SHOULD
