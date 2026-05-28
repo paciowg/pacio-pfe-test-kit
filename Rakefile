@@ -19,6 +19,6 @@ namespace :pacio_pfe do
   task :generate do
     require_relative 'lib/pacio_pfe_test_kit/generator'
 
-    PacioPFETestKit::Generator.generate
+    PacioPFETestKit::Generator.generate(ig_package: ENV.fetch('ig', nil))
   end
 end

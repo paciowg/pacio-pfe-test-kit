@@ -14,12 +14,23 @@ require_relative 'generator/validation_test_generator'
 
 module PacioPFETestKit
   class Generator
-    def self.generate
-      ig_packages = Dir.glob(File.join(Dir.pwd, 'lib', 'pacio_pfe_test_kit', 'igs', '*.tgz'))
-
-      ig_packages.each do |ig_package|
+    def self.generate(ig_package: nil)
+      ig_package_paths(ig_package).each do |ig_package|
         new(ig_package).generate
       end
+    end
+
+    def self.ig_package_paths(ig_package)
+      ig_dir = File.join(Dir.pwd, 'lib', 'pacio_pfe_test_kit', 'igs')
+      ig_name = ig_package.to_s.strip
+
+      return Dir.glob(File.join(ig_dir, '*.tgz')) if ig_name.empty?
+
+      ig_package = File.join(ig_dir, File.basename(ig_name))
+
+      raise ArgumentError, "IG package not found: #{ig_package}" unless File.file?(ig_package)
+
+      [ig_package]
     end
 
     attr_accessor :ig_resources, :ig_metadata, :ig_file_name
