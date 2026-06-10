@@ -18,15 +18,15 @@ module PacioPFETestKit
         end
 
         def implementation_guide_id
-          'hl7.fhir.us.pacio-pfe'
+          "hl7.fhir.us.pacio-#{prefix}"
         end
 
         def module_name
-          'PacioPFE'
+          "Pacio#{prefix.upcase}"
         end
 
         def long_name
-          'PACIO PFE'
+          "PACIO #{prefix.upcase}"
         end
 
         def resource_has_multiple_profiles?(resource)
