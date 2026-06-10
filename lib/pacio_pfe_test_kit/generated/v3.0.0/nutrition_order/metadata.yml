@@ -10,35 +10,34 @@
 :title: Personal Functioning and Engagement Nutrition Order
 :short_description: Verify support for the server capabilities required by the Personal
   Functioning and Engagement Nutrition Order Profile.
-:is_delayed: true
+:is_delayed: false
 :interactions:
-- :code: create
-  :expectation: SHOULD
-- :code: update
-  :expectation: SHOULD
-- :code: delete
-  :expectation: SHOULD
 - :code: read
-  :expectation: SHOULD
-- :code: vread
-  :expectation: MAY
-- :code: history-instance
-  :expectation: MAY
-- :code: history-type
-  :expectation: MAY
+  :expectation: SHALL
 - :code: search-type
-  :expectation: MAY
-- :code: patch
-  :expectation: MAY
+  :expectation: SHALL
 :operations: []
-:searches: []
-:search_definitions: {}
-:include_params:
-- NutritionOrder.identifier
-- NutritionOrder.patient
-- NutritionOrder.encounter
-- NutritionOrder.orderer
-- NutritionOrder.status
+:searches:
+- :names:
+  - patient
+  :expectation: SHALL
+  :names_not_must_support_or_mandatory:
+  - patient
+  :must_support_or_mandatory: false
+:search_definitions:
+  :patient:
+    :paths:
+    - 'AllergyIntolerance.patient '
+    - " CarePlan.subject"
+    :full_paths:
+    - 'AllergyIntolerance.patient '
+    - " CarePlan.subject"
+    :comparators: {}
+    :values: []
+    :type: reference
+    :contains_multiple: false
+    :multiple_or: MAY
+:include_params: []
 :revincludes: []
 :required_concepts: []
 :must_supports:
@@ -108,6 +107,8 @@
   :profiles:
   - http://hl7.org/fhir/StructureDefinition/AllergyIntolerance|4.0.1
 :tests:
+- :id: pfe_v300_nutrition_order_patient_search_test
+  :file_name: nutrition_order_patient_search_test.rb
 - :id: pfe_v300_nutrition_order_read_test
   :file_name: nutrition_order_read_test.rb
 - :id: pfe_v300_nutrition_order_validation_test
@@ -117,4 +118,4 @@
 :id: pfe_v300_nutrition_order
 :file_name: nutrition_order_group.rb
 :delayed_references: []
-:resource_conformance_expectation: SHOULD
+:resource_conformance_expectation: SHALL

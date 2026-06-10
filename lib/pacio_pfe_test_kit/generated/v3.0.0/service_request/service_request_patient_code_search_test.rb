@@ -26,7 +26,6 @@ none are returned, the test is skipped.
         @properties ||= PacioInfernoCore::SearchTestProperties.new(
           resource_type: 'ServiceRequest',
           search_param_names: ['patient', 'code'],
-          possible_status_search: true,
           token_search_params: ['code']
         )
       end

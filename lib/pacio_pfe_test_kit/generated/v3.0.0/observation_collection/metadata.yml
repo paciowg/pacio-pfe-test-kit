@@ -16,65 +16,16 @@
   :expectation: SHALL
 - :code: update
   :expectation: SHALL
-- :code: delete
-  :expectation: MAY
 - :code: read
   :expectation: SHALL
-- :code: vread
-  :expectation: SHOULD
-- :code: history-instance
-  :expectation: SHOULD
-- :code: history-type
-  :expectation: MAY
 - :code: search-type
   :expectation: SHALL
-- :code: patch
-  :expectation: MAY
 :operations: []
 :searches:
 - :expectation: SHALL
   :names:
   - patient
   - code
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
-- :names:
-  - date
-  :expectation: SHALL
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
-- :names:
-  - code
-  :expectation: SHALL
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
-- :names:
-  - patient
-  :expectation: SHALL
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
-- :names:
-  - category
-  :expectation: SHALL
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
-- :names:
-  - status
-  :expectation: SHALL
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
-- :expectation: SHOULD
-  :names:
-  - patient
-  - code
-  - date
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
-- :expectation: SHOULD
-  :names:
-  - patient
-  - category
-  - status
   :names_not_must_support_or_mandatory: []
   :must_support_or_mandatory: true
 - :expectation: SHALL
@@ -91,35 +42,6 @@
   :names_not_must_support_or_mandatory: []
   :must_support_or_mandatory: true
 :search_definitions:
-  :date:
-    :paths:
-    - effective
-    :full_paths:
-    - Observation.effective
-    :comparators:
-      :eq: MAY
-      :ne: MAY
-      :gt: SHALL
-      :ge: SHALL
-      :lt: SHALL
-      :le: SHALL
-      :sa: MAY
-      :eb: MAY
-      :ap: MAY
-    :values: []
-    :type: date
-    :contains_multiple: false
-    :multiple_or: MAY
-  :code:
-    :paths:
-    - code
-    :full_paths:
-    - Observation.code
-    :comparators: {}
-    :values: []
-    :type: CodeableConcept
-    :contains_multiple: false
-    :multiple_or: SHOULD
   :patient:
     :paths:
     - subject
@@ -158,43 +80,37 @@
     :type: CodeableConcept
     :contains_multiple: true
     :multiple_or: MAY
-  :status:
+  :date:
     :paths:
-    - status
+    - effective
     :full_paths:
-    - Observation.status
-    :comparators: {}
-    :values:
-    - registered
-    - preliminary
-    - final
-    - amended
-    - corrected
-    - cancelled
-    - entered-in-error
-    - unknown
-    :type: code
+    - Observation.effective
+    :comparators:
+      :eq: MAY
+      :ne: MAY
+      :gt: SHALL
+      :ge: SHALL
+      :lt: SHALL
+      :le: SHALL
+      :sa: MAY
+      :eb: MAY
+      :ap: MAY
+    :values: []
+    :type: date
     :contains_multiple: false
-    :multiple_or: SHALL
-:include_params:
-- Observation.subject
-- Observation.based-on
-- Observation.patient
-- Observation.specimen
-- Observation.context
-- Observation.performer
-- Observation.encounter
-- Observation.device
-:revincludes:
-- ChargeItem.service
-- ClinicalImpression.finding-ref
-- ClinicalImpression.investigation
-- DiagnosticReport.result
-- Immunization.reaction
-- ImmunizationRecommendation.information
-- MedicationStatement.part-of
-- Procedure.part-of
-- QuestionnaireResponse.parent
+    :multiple_or: MAY
+  :code:
+    :paths:
+    - code
+    :full_paths:
+    - Observation.code
+    :comparators: {}
+    :values: []
+    :type: CodeableConcept
+    :contains_multiple: false
+    :multiple_or: SHOULD
+:include_params: []
+:revincludes: []
 :required_concepts: []
 :must_supports:
   :extensions:
@@ -381,20 +297,6 @@
 :tests:
 - :id: pfe_v300_observation_collection_patient_code_search_test
   :file_name: observation_collection_patient_code_search_test.rb
-- :id: pfe_v300_observation_collection_date_search_test
-  :file_name: observation_collection_date_search_test.rb
-- :id: pfe_v300_observation_collection_code_search_test
-  :file_name: observation_collection_code_search_test.rb
-- :id: pfe_v300_observation_collection_patient_search_test
-  :file_name: observation_collection_patient_search_test.rb
-- :id: pfe_v300_observation_collection_category_search_test
-  :file_name: observation_collection_category_search_test.rb
-- :id: pfe_v300_observation_collection_status_search_test
-  :file_name: observation_collection_status_search_test.rb
-- :id: pfe_v300_observation_collection_patient_code_date_search_test
-  :file_name: observation_collection_patient_code_date_search_test.rb
-- :id: pfe_v300_observation_collection_patient_category_status_search_test
-  :file_name: observation_collection_patient_category_status_search_test.rb
 - :id: pfe_v300_observation_collection_patient_category_date_search_test
   :file_name: observation_collection_patient_category_date_search_test.rb
 - :id: pfe_v300_observation_collection_patient_category_search_test

@@ -1,12 +1,7 @@
 require_relative 'service_request/service_request_patient_search_test'
-require_relative 'service_request/service_request_status_search_test'
-require_relative 'service_request/service_request_code_search_test'
-require_relative 'service_request/service_request_category_search_test'
-require_relative 'service_request/service_request_authored_search_test'
+require_relative 'service_request/service_request_id_search_test'
 require_relative 'service_request/service_request_patient_category_authored_search_test'
-require_relative 'service_request/service_request_patient_status_search_test'
 require_relative 'service_request/service_request_patient_category_search_test'
-require_relative 'service_request/service_request_patient_code_authored_search_test'
 require_relative 'service_request/service_request_patient_code_search_test'
 require_relative 'service_request/service_request_read_test'
 require_relative 'service_request/service_request_validation_test'
@@ -34,10 +29,7 @@ with this resource. This sequence will perform searches with the
 following parameters:
 
 * patient
-* status
-* code
-* category
-* authored
+* _id
 * patient + category + authored
 * patient + category
 * patient + code
@@ -94,14 +86,9 @@ read succeeds.
       end
 
       test from: :pfe_v300_service_request_patient_search_test
-      test from: :pfe_v300_service_request_status_search_test
-      test from: :pfe_v300_service_request_code_search_test
-      test from: :pfe_v300_service_request_category_search_test
-      test from: :pfe_v300_service_request_authored_search_test
+      test from: :pfe_v300_service_request__id_search_test
       test from: :pfe_v300_service_request_patient_category_authored_search_test
-      test from: :pfe_v300_service_request_patient_status_search_test
       test from: :pfe_v300_service_request_patient_category_search_test
-      test from: :pfe_v300_service_request_patient_code_authored_search_test
       test from: :pfe_v300_service_request_patient_code_search_test
       test from: :pfe_v300_service_request_read_test
       test from: :pfe_v300_service_request_validation_test

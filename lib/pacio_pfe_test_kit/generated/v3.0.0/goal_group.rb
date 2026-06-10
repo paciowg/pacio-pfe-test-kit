@@ -1,10 +1,4 @@
 require_relative 'goal/goal_patient_search_test'
-require_relative 'goal/goal_subject_search_test'
-require_relative 'goal/goal_target_date_search_test'
-require_relative 'goal/goal_lifecycle_status_search_test'
-require_relative 'goal/goal_patient_target_date_search_test'
-require_relative 'goal/goal_patient_description_search_test'
-require_relative 'goal/goal_patient_lifecycle_status_search_test'
 require_relative 'goal/goal_read_test'
 require_relative 'goal/goal_validation_test'
 require_relative 'goal/goal_must_support_test'
@@ -31,9 +25,6 @@ with this resource. This sequence will perform searches with the
 following parameters:
 
 * patient
-* subject
-* target-date
-* lifecycle-status
 
 ### Search Parameters
 The first search uses the selected patient(s) from the prior launch
@@ -87,12 +78,6 @@ read succeeds.
       end
 
       test from: :pfe_v300_goal_patient_search_test
-      test from: :pfe_v300_goal_subject_search_test
-      test from: :pfe_v300_goal_target_date_search_test
-      test from: :pfe_v300_goal_lifecycle_status_search_test
-      test from: :pfe_v300_goal_patient_target_date_search_test
-      test from: :pfe_v300_goal_patient_description_search_test
-      test from: :pfe_v300_goal_patient_lifecycle_status_search_test
       test from: :pfe_v300_goal_read_test
       test from: :pfe_v300_goal_validation_test
       test from: :pfe_v300_goal_must_support_test

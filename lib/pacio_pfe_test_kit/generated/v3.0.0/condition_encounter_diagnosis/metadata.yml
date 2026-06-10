@@ -12,115 +12,15 @@
   Functioning and Engagement Condition Encounter Diagnosis Profile.
 :is_delayed: false
 :interactions:
-- :code: create
-  :expectation: SHOULD
-- :code: update
-  :expectation: SHOULD
-- :code: delete
-  :expectation: SHOULD
 - :code: read
-  :expectation: SHOULD
-- :code: vread
-  :expectation: MAY
-- :code: history-instance
-  :expectation: MAY
-- :code: history-type
-  :expectation: MAY
+  :expectation: SHALL
 - :code: search-type
-  :expectation: MAY
-- :code: patch
-  :expectation: MAY
+  :expectation: SHALL
 :operations: []
 :searches:
 - :names:
   - patient
   :expectation: SHALL
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
-- :names:
-  - clinical-status
-  :expectation: SHALL
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
-- :names:
-  - abatement-date
-  :expectation: SHALL
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
-- :names:
-  - onset-date
-  :expectation: SHALL
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
-- :names:
-  - recorded-date
-  :expectation: SHALL
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
-- :names:
-  - subject
-  :expectation: SHALL
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
-- :names:
-  - code
-  :expectation: SHALL
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
-- :names:
-  - encounter
-  :expectation: SHALL
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
-- :expectation: SHOULD
-  :names:
-  - patient
-  - recorded-date
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
-- :expectation: SHOULD
-  :names:
-  - patient
-  - asserted-date
-  :names_not_must_support_or_mandatory:
-  - asserted-date
-  :must_support_or_mandatory: false
-- :expectation: SHOULD
-  :names:
-  - patient
-  - category
-  - clinical-status
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
-- :expectation: SHOULD
-  :names:
-  - patient
-  - onset-date
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
-- :expectation: SHOULD
-  :names:
-  - patient
-  - abatement-date
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
-- :expectation: SHOULD
-  :names:
-  - patient
-  - clinical-status
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
-- :expectation: SHOULD
-  :names:
-  - patient
-  - category
-  - encounter
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
-- :expectation: SHOULD
-  :names:
-  - patient
-  - code
   :names_not_must_support_or_mandatory: []
   :must_support_or_mandatory: true
 - :expectation: SHALL
@@ -130,93 +30,6 @@
   :names_not_must_support_or_mandatory: []
   :must_support_or_mandatory: true
 :search_definitions:
-  :clinical-status:
-    :paths:
-    - clinicalStatus
-    :full_paths:
-    - Condition.clinicalStatus
-    :comparators: {}
-    :values:
-    - active
-    - recurrence
-    - relapse
-    - inactive
-    - remission
-    - resolved
-    :type: CodeableConcept
-    :contains_multiple: false
-    :multiple_or: MAY
-  :abatement-date:
-    :paths:
-    - abatementDateTime
-    - abatementPeriod
-    :full_paths:
-    - Condition.abatementDateTime
-    - Condition.abatementPeriod
-    :comparators:
-      :eq: MAY
-      :ne: MAY
-      :gt: SHALL
-      :ge: SHALL
-      :lt: SHALL
-      :le: SHALL
-      :sa: MAY
-      :eb: MAY
-      :ap: MAY
-    :values: []
-    :type: date
-    :contains_multiple: false
-    :multiple_or: MAY
-  :onset-date:
-    :paths:
-    - onsetDateTime
-    - onsetPeriod
-    :full_paths:
-    - Condition.onsetDateTime
-    - Condition.onsetPeriod
-    :comparators:
-      :eq: MAY
-      :ne: MAY
-      :gt: SHALL
-      :ge: SHALL
-      :lt: SHALL
-      :le: SHALL
-      :sa: MAY
-      :eb: MAY
-      :ap: MAY
-    :values: []
-    :type: date
-    :contains_multiple: false
-    :multiple_or: MAY
-  :recorded-date:
-    :paths:
-    - recordedDate
-    :full_paths:
-    - Condition.recordedDate
-    :comparators:
-      :eq: MAY
-      :ne: MAY
-      :gt: SHALL
-      :ge: SHALL
-      :lt: SHALL
-      :le: SHALL
-      :sa: MAY
-      :eb: MAY
-      :ap: MAY
-    :values: []
-    :type: dateTime
-    :contains_multiple: false
-    :multiple_or: MAY
-  :subject:
-    :paths:
-    - subject
-    :full_paths:
-    - Condition.subject
-    :comparators: {}
-    :values: []
-    :type: Reference
-    :contains_multiple: false
-    :multiple_or: MAY
   :patient:
     :paths:
     - subject
@@ -225,45 +38,6 @@
     :comparators: {}
     :values: []
     :type: Reference
-    :contains_multiple: false
-    :multiple_or: MAY
-  :code:
-    :paths:
-    - code
-    :full_paths:
-    - Condition.code
-    :comparators: {}
-    :values: []
-    :type: CodeableConcept
-    :contains_multiple: false
-    :multiple_or: MAY
-  :encounter:
-    :paths:
-    - encounter
-    :full_paths:
-    - Condition.encounter
-    :comparators: {}
-    :values: []
-    :type: Reference
-    :contains_multiple: false
-    :multiple_or: MAY
-  :asserted-date:
-    :paths:
-    - extension.where(url='http://hl7.org/fhir/StructureDefinition/condition-assertedDate').valueDateTime
-    :full_paths:
-    - Condition.extension.where(url='http://hl7.org/fhir/StructureDefinition/condition-assertedDate').valueDateTime
-    :comparators:
-      :eq: MAY
-      :ne: MAY
-      :gt: SHALL
-      :ge: SHALL
-      :lt: SHALL
-      :le: SHALL
-      :sa: MAY
-      :eb: MAY
-      :ap: MAY
-    :values: []
-    :type: dateTime
     :contains_multiple: false
     :multiple_or: MAY
   :category:
@@ -277,15 +51,7 @@
     :type: CodeableConcept
     :contains_multiple: true
     :multiple_or: MAY
-:include_params:
-- Condition.identifier
-- Condition.subject
-- Condition.patient
-- Condition.bodySite
-- Condition.asserter
-- Condition.recordedDate
-- Condition.code
-- Condition.encounter
+:include_params: []
 :revincludes: []
 :required_concepts:
 - clinicalStatus
@@ -371,36 +137,6 @@
 :tests:
 - :id: pfe_v300_condition_encounter_diagnosis_patient_search_test
   :file_name: condition_encounter_diagnosis_patient_search_test.rb
-- :id: pfe_v300_condition_encounter_diagnosis_clinical_status_search_test
-  :file_name: condition_encounter_diagnosis_clinical_status_search_test.rb
-- :id: pfe_v300_condition_encounter_diagnosis_abatement_date_search_test
-  :file_name: condition_encounter_diagnosis_abatement_date_search_test.rb
-- :id: pfe_v300_condition_encounter_diagnosis_onset_date_search_test
-  :file_name: condition_encounter_diagnosis_onset_date_search_test.rb
-- :id: pfe_v300_condition_encounter_diagnosis_recorded_date_search_test
-  :file_name: condition_encounter_diagnosis_recorded_date_search_test.rb
-- :id: pfe_v300_condition_encounter_diagnosis_subject_search_test
-  :file_name: condition_encounter_diagnosis_subject_search_test.rb
-- :id: pfe_v300_condition_encounter_diagnosis_code_search_test
-  :file_name: condition_encounter_diagnosis_code_search_test.rb
-- :id: pfe_v300_condition_encounter_diagnosis_encounter_search_test
-  :file_name: condition_encounter_diagnosis_encounter_search_test.rb
-- :id: pfe_v300_condition_encounter_diagnosis_patient_recorded_date_search_test
-  :file_name: condition_encounter_diagnosis_patient_recorded_date_search_test.rb
-- :id: pfe_v300_condition_encounter_diagnosis_patient_asserted_date_search_test
-  :file_name: condition_encounter_diagnosis_patient_asserted_date_search_test.rb
-- :id: pfe_v300_condition_encounter_diagnosis_patient_category_clinical_status_search_test
-  :file_name: condition_encounter_diagnosis_patient_category_clinical_status_search_test.rb
-- :id: pfe_v300_condition_encounter_diagnosis_patient_onset_date_search_test
-  :file_name: condition_encounter_diagnosis_patient_onset_date_search_test.rb
-- :id: pfe_v300_condition_encounter_diagnosis_patient_abatement_date_search_test
-  :file_name: condition_encounter_diagnosis_patient_abatement_date_search_test.rb
-- :id: pfe_v300_condition_encounter_diagnosis_patient_clinical_status_search_test
-  :file_name: condition_encounter_diagnosis_patient_clinical_status_search_test.rb
-- :id: pfe_v300_condition_encounter_diagnosis_patient_category_encounter_search_test
-  :file_name: condition_encounter_diagnosis_patient_category_encounter_search_test.rb
-- :id: pfe_v300_condition_encounter_diagnosis_patient_code_search_test
-  :file_name: condition_encounter_diagnosis_patient_code_search_test.rb
 - :id: pfe_v300_condition_encounter_diagnosis_patient_category_search_test
   :file_name: condition_encounter_diagnosis_patient_category_search_test.rb
 - :id: pfe_v300_condition_encounter_diagnosis_read_test
@@ -412,4 +148,4 @@
 :id: pfe_v300_condition_encounter_diagnosis
 :file_name: condition_encounter_diagnosis_group.rb
 :delayed_references: []
-:resource_conformance_expectation: SHOULD
+:resource_conformance_expectation: SHALL

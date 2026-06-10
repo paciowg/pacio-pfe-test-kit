@@ -1,19 +1,4 @@
 require_relative 'condition_problems_health_concerns/condition_problems_health_concerns_patient_search_test'
-require_relative 'condition_problems_health_concerns/condition_problems_health_concerns_clinical_status_search_test'
-require_relative 'condition_problems_health_concerns/condition_problems_health_concerns_abatement_date_search_test'
-require_relative 'condition_problems_health_concerns/condition_problems_health_concerns_onset_date_search_test'
-require_relative 'condition_problems_health_concerns/condition_problems_health_concerns_recorded_date_search_test'
-require_relative 'condition_problems_health_concerns/condition_problems_health_concerns_subject_search_test'
-require_relative 'condition_problems_health_concerns/condition_problems_health_concerns_code_search_test'
-require_relative 'condition_problems_health_concerns/condition_problems_health_concerns_encounter_search_test'
-require_relative 'condition_problems_health_concerns/condition_problems_health_concerns_patient_recorded_date_search_test'
-require_relative 'condition_problems_health_concerns/condition_problems_health_concerns_patient_asserted_date_search_test'
-require_relative 'condition_problems_health_concerns/condition_problems_health_concerns_patient_category_clinical_status_search_test'
-require_relative 'condition_problems_health_concerns/condition_problems_health_concerns_patient_onset_date_search_test'
-require_relative 'condition_problems_health_concerns/condition_problems_health_concerns_patient_abatement_date_search_test'
-require_relative 'condition_problems_health_concerns/condition_problems_health_concerns_patient_clinical_status_search_test'
-require_relative 'condition_problems_health_concerns/condition_problems_health_concerns_patient_category_encounter_search_test'
-require_relative 'condition_problems_health_concerns/condition_problems_health_concerns_patient_code_search_test'
 require_relative 'condition_problems_health_concerns/condition_problems_health_concerns_patient_category_search_test'
 require_relative 'condition_problems_health_concerns/condition_problems_health_concerns_read_test'
 require_relative 'condition_problems_health_concerns/condition_problems_health_concerns_validation_test'
@@ -41,13 +26,6 @@ with this resource. This sequence will perform searches with the
 following parameters:
 
 * patient
-* clinical-status
-* abatement-date
-* onset-date
-* recorded-date
-* subject
-* code
-* encounter
 * patient + category
 
 ### Search Parameters
@@ -102,21 +80,6 @@ read succeeds.
       end
 
       test from: :pfe_v300_condition_problems_health_concerns_patient_search_test
-      test from: :pfe_v300_condition_problems_health_concerns_clinical_status_search_test
-      test from: :pfe_v300_condition_problems_health_concerns_abatement_date_search_test
-      test from: :pfe_v300_condition_problems_health_concerns_onset_date_search_test
-      test from: :pfe_v300_condition_problems_health_concerns_recorded_date_search_test
-      test from: :pfe_v300_condition_problems_health_concerns_subject_search_test
-      test from: :pfe_v300_condition_problems_health_concerns_code_search_test
-      test from: :pfe_v300_condition_problems_health_concerns_encounter_search_test
-      test from: :pfe_v300_condition_problems_health_concerns_patient_recorded_date_search_test
-      test from: :pfe_v300_condition_problems_health_concerns_patient_asserted_date_search_test
-      test from: :pfe_v300_condition_problems_health_concerns_patient_category_clinical_status_search_test
-      test from: :pfe_v300_condition_problems_health_concerns_patient_onset_date_search_test
-      test from: :pfe_v300_condition_problems_health_concerns_patient_abatement_date_search_test
-      test from: :pfe_v300_condition_problems_health_concerns_patient_clinical_status_search_test
-      test from: :pfe_v300_condition_problems_health_concerns_patient_category_encounter_search_test
-      test from: :pfe_v300_condition_problems_health_concerns_patient_code_search_test
       test from: :pfe_v300_condition_problems_health_concerns_patient_category_search_test
       test from: :pfe_v300_condition_problems_health_concerns_read_test
       test from: :pfe_v300_condition_problems_health_concerns_validation_test

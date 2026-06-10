@@ -1,4 +1,7 @@
 require_relative 'patient/patient_id_search_test'
+require_relative 'patient/patient_identifier_search_test'
+require_relative 'patient/patient_name_search_test'
+require_relative 'patient/patient_birthdate_name_search_test'
 require_relative 'patient/patient_read_test'
 require_relative 'patient/patient_validation_test'
 require_relative 'patient/patient_must_support_test'
@@ -25,6 +28,9 @@ with this resource. This sequence will perform searches with the
 following parameters:
 
 * _id
+* identifier
+* name
+* birthdate + name
 
 ### Search Parameters
 The first search uses the selected patient(s) from the prior launch
@@ -78,6 +84,9 @@ read succeeds.
       end
 
       test from: :pfe_v300_patient__id_search_test
+      test from: :pfe_v300_patient_identifier_search_test
+      test from: :pfe_v300_patient_name_search_test
+      test from: :pfe_v300_patient_birthdate_name_search_test
       test from: :pfe_v300_patient_read_test
       test from: :pfe_v300_patient_validation_test
       test from: :pfe_v300_patient_must_support_test

@@ -8,7 +8,7 @@ module PacioPFETestKit
     class GroupGenerator < PacioInfernoCore::Generator::GroupGenerator
       class << self
         def generate(ig_metadata, base_output_dir)
-          ig_metadata.ordered_groups
+          ig_metadata.ordered_groups          
             .each { |group| new(group, base_output_dir).generate }
         end
       end

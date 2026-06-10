@@ -6,7 +6,7 @@ module PacioPFETestKit
       include PacioPFETestKit::ReadTest
 
       title 'Server returns correct NutritionOrder resource from NutritionOrder read interaction'
-      description 'A server SHOULD support the NutritionOrder read interaction.'
+      description 'A server SHALL support the NutritionOrder read interaction.'
 
       id :pfe_v300_nutrition_order_read_test
 
@@ -19,7 +19,7 @@ module PacioPFETestKit
       end
 
       run do
-        perform_read_test(scratch.dig(:references, 'NutritionOrder'), delayed_reference: true)
+        perform_read_test(all_scratch_resources)
       end
     end
   end

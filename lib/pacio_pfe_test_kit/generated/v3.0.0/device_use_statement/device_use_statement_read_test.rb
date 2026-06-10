@@ -6,7 +6,7 @@ module PacioPFETestKit
       include PacioPFETestKit::ReadTest
 
       title 'Server returns correct DeviceUseStatement resource from DeviceUseStatement read interaction'
-      description 'A server SHOULD support the DeviceUseStatement read interaction.'
+      description 'A server SHALL support the DeviceUseStatement read interaction.'
 
       id :pfe_v300_device_use_statement_read_test
 
@@ -19,7 +19,7 @@ module PacioPFETestKit
       end
 
       run do
-        perform_read_test(scratch.dig(:references, 'DeviceUseStatement'), delayed_reference: true)
+        perform_read_test(all_scratch_resources)
       end
     end
   end

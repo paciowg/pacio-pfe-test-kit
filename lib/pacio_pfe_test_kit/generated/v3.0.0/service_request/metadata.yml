@@ -12,24 +12,10 @@
   Functioning and Engagement Service Request Profile.
 :is_delayed: false
 :interactions:
-- :code: create
-  :expectation: SHOULD
-- :code: update
-  :expectation: SHOULD
-- :code: delete
-  :expectation: SHOULD
 - :code: read
-  :expectation: SHOULD
-- :code: vread
-  :expectation: MAY
-- :code: history-instance
-  :expectation: MAY
-- :code: history-type
-  :expectation: MAY
+  :expectation: SHALL
 - :code: search-type
-  :expectation: MAY
-- :code: patch
-  :expectation: MAY
+  :expectation: SHALL
 :operations: []
 :searches:
 - :names:
@@ -38,22 +24,7 @@
   :names_not_must_support_or_mandatory: []
   :must_support_or_mandatory: true
 - :names:
-  - status
-  :expectation: SHALL
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
-- :names:
-  - code
-  :expectation: SHALL
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
-- :names:
-  - category
-  :expectation: SHALL
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
-- :names:
-  - authored
+  - _id
   :expectation: SHALL
   :names_not_must_support_or_mandatory: []
   :must_support_or_mandatory: true
@@ -64,23 +35,10 @@
   - authored
   :names_not_must_support_or_mandatory: []
   :must_support_or_mandatory: true
-- :expectation: SHOULD
-  :names:
-  - patient
-  - status
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
 - :expectation: SHALL
   :names:
   - patient
   - category
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
-- :expectation: SHOULD
-  :names:
-  - patient
-  - code
-  - authored
   :names_not_must_support_or_mandatory: []
   :must_support_or_mandatory: true
 - :expectation: SHALL
@@ -90,6 +48,16 @@
   :names_not_must_support_or_mandatory: []
   :must_support_or_mandatory: true
 :search_definitions:
+  :_id:
+    :paths:
+    - id
+    :full_paths:
+    - ServiceRequest.id
+    :comparators: {}
+    :values: []
+    :type: http://hl7.org/fhirpath/System.String
+    :contains_multiple: false
+    :multiple_or: MAY
   :patient:
     :paths:
     - subject
@@ -100,33 +68,6 @@
     :type: Reference
     :contains_multiple: false
     :multiple_or: MAY
-  :status:
-    :paths:
-    - status
-    :full_paths:
-    - ServiceRequest.status
-    :comparators: {}
-    :values:
-    - draft
-    - active
-    - on-hold
-    - revoked
-    - completed
-    - entered-in-error
-    - unknown
-    :type: code
-    :contains_multiple: false
-    :multiple_or: SHALL
-  :code:
-    :paths:
-    - code
-    :full_paths:
-    - ServiceRequest.code
-    :comparators: {}
-    :values: []
-    :type: CodeableConcept
-    :contains_multiple: false
-    :multiple_or: SHOULD
   :category:
     :paths:
     - category
@@ -161,15 +102,17 @@
     :type: dateTime
     :contains_multiple: false
     :multiple_or: MAY
-:include_params:
-- ServiceRequest.identifier
-- ServiceRequest.subject
-- ServiceRequest.patient
-- ServiceRequest.status
-- ServiceRequest.code
-- ServiceRequest.requester
-- ServiceRequest.performer
-- ServiceRequest.reasonReference
+  :code:
+    :paths:
+    - code
+    :full_paths:
+    - ServiceRequest.code
+    :comparators: {}
+    :values: []
+    :type: CodeableConcept
+    :contains_multiple: false
+    :multiple_or: SHOULD
+:include_params: []
 :revincludes: []
 :required_concepts:
 - category
@@ -292,22 +235,12 @@
 :tests:
 - :id: pfe_v300_service_request_patient_search_test
   :file_name: service_request_patient_search_test.rb
-- :id: pfe_v300_service_request_status_search_test
-  :file_name: service_request_status_search_test.rb
-- :id: pfe_v300_service_request_code_search_test
-  :file_name: service_request_code_search_test.rb
-- :id: pfe_v300_service_request_category_search_test
-  :file_name: service_request_category_search_test.rb
-- :id: pfe_v300_service_request_authored_search_test
-  :file_name: service_request_authored_search_test.rb
+- :id: pfe_v300_service_request__id_search_test
+  :file_name: service_request_id_search_test.rb
 - :id: pfe_v300_service_request_patient_category_authored_search_test
   :file_name: service_request_patient_category_authored_search_test.rb
-- :id: pfe_v300_service_request_patient_status_search_test
-  :file_name: service_request_patient_status_search_test.rb
 - :id: pfe_v300_service_request_patient_category_search_test
   :file_name: service_request_patient_category_search_test.rb
-- :id: pfe_v300_service_request_patient_code_authored_search_test
-  :file_name: service_request_patient_code_authored_search_test.rb
 - :id: pfe_v300_service_request_patient_code_search_test
   :file_name: service_request_patient_code_search_test.rb
 - :id: pfe_v300_service_request_read_test
@@ -319,4 +252,4 @@
 :id: pfe_v300_service_request
 :file_name: service_request_group.rb
 :delayed_references: []
-:resource_conformance_expectation: SHOULD
+:resource_conformance_expectation: SHALL

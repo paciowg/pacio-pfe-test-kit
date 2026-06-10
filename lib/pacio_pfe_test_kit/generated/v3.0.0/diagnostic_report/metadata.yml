@@ -16,58 +16,15 @@
   :expectation: SHALL
 - :code: update
   :expectation: SHALL
-- :code: delete
-  :expectation: MAY
 - :code: read
   :expectation: SHALL
-- :code: vread
-  :expectation: SHOULD
-- :code: history-instance
-  :expectation: SHOULD
-- :code: history-type
-  :expectation: MAY
 - :code: search-type
   :expectation: SHALL
-- :code: patch
-  :expectation: MAY
 :operations: []
 :searches:
 - :names:
   - patient
   :expectation: SHALL
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
-- :names:
-  - date
-  :expectation: SHALL
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
-- :names:
-  - category
-  :expectation: SHALL
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
-- :names:
-  - status
-  :expectation: SHALL
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
-- :names:
-  - code
-  :expectation: SHALL
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
-- :expectation: SHOULD
-  :names:
-  - patient
-  - code
-  - date
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
-- :expectation: SHOULD
-  :names:
-  - patient
-  - status
   :names_not_must_support_or_mandatory: []
   :must_support_or_mandatory: true
 - :expectation: SHALL
@@ -90,23 +47,14 @@
   :names_not_must_support_or_mandatory: []
   :must_support_or_mandatory: true
 :search_definitions:
-  :date:
+  :patient:
     :paths:
-    - effective
+    - subject
     :full_paths:
-    - DiagnosticReport.effective
-    :comparators:
-      :eq: MAY
-      :ne: MAY
-      :gt: SHALL
-      :ge: SHALL
-      :lt: SHALL
-      :le: SHALL
-      :sa: MAY
-      :eb: MAY
-      :ap: MAY
+    - DiagnosticReport.subject
+    :comparators: {}
     :values: []
-    :type: date
+    :type: Reference
     :contains_multiple: false
     :multiple_or: MAY
   :category:
@@ -160,26 +108,25 @@
     :type: CodeableConcept
     :contains_multiple: true
     :multiple_or: MAY
-  :status:
+  :date:
     :paths:
-    - status
+    - effective
     :full_paths:
-    - DiagnosticReport.status
-    :comparators: {}
-    :values:
-    - registered
-    - partial
-    - preliminary
-    - final
-    - amended
-    - corrected
-    - appended
-    - cancelled
-    - entered-in-error
-    - unknown
-    :type: code
+    - DiagnosticReport.effective
+    :comparators:
+      :eq: MAY
+      :ne: MAY
+      :gt: SHALL
+      :ge: SHALL
+      :lt: SHALL
+      :le: SHALL
+      :sa: MAY
+      :eb: MAY
+      :ap: MAY
+    :values: []
+    :type: date
     :contains_multiple: false
-    :multiple_or: SHALL
+    :multiple_or: MAY
   :code:
     :paths:
     - code
@@ -190,26 +137,7 @@
     :type: CodeableConcept
     :contains_multiple: false
     :multiple_or: SHOULD
-  :patient:
-    :paths:
-    - subject
-    :full_paths:
-    - DiagnosticReport.subject
-    :comparators: {}
-    :values: []
-    :type: Reference
-    :contains_multiple: false
-    :multiple_or: MAY
-:include_params:
-- DiagnosticReport.based-on
-- DiagnosticReport.subject
-- DiagnosticReport.patient
-- DiagnosticReport.encounter
-- DiagnosticReport.media
-- DiagnosticReport.performer
-- DiagnosticReport.result
-- DiagnosticReport.results-interpreter
-- DiagnosticReport.specimen
+:include_params: []
 :revincludes: []
 :required_concepts:
 - category
@@ -498,18 +426,6 @@
 :tests:
 - :id: pfe_v300_diagnostic_report_patient_search_test
   :file_name: diagnostic_report_patient_search_test.rb
-- :id: pfe_v300_diagnostic_report_date_search_test
-  :file_name: diagnostic_report_date_search_test.rb
-- :id: pfe_v300_diagnostic_report_category_search_test
-  :file_name: diagnostic_report_category_search_test.rb
-- :id: pfe_v300_diagnostic_report_status_search_test
-  :file_name: diagnostic_report_status_search_test.rb
-- :id: pfe_v300_diagnostic_report_code_search_test
-  :file_name: diagnostic_report_code_search_test.rb
-- :id: pfe_v300_diagnostic_report_patient_code_date_search_test
-  :file_name: diagnostic_report_patient_code_date_search_test.rb
-- :id: pfe_v300_diagnostic_report_patient_status_search_test
-  :file_name: diagnostic_report_patient_status_search_test.rb
 - :id: pfe_v300_diagnostic_report_patient_category_date_search_test
   :file_name: diagnostic_report_patient_category_date_search_test.rb
 - :id: pfe_v300_diagnostic_report_patient_category_search_test
@@ -525,4 +441,4 @@
 :id: pfe_v300_diagnostic_report
 :file_name: diagnostic_report_group.rb
 :delayed_references: []
-:resource_conformance_expectation: MAY
+:resource_conformance_expectation: SHALL

@@ -6,7 +6,7 @@ module PacioPFETestKit
       include PacioPFETestKit::ReadTest
 
       title 'Server returns correct Condition resource from Condition read interaction'
-      description 'A server SHOULD support the Condition read interaction.'
+      description 'A server SHALL support the Condition read interaction.'
 
       id :pfe_v300_condition_problems_health_concerns_read_test
 

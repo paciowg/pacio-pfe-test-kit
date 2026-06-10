@@ -15,6 +15,8 @@ module PacioPFETestKit
       # PACIO PFE 2.0 CapabilityStatement does not include Patient profile. Since PFE IG
       # is a patient compartment IG, Patient shall be included.
       def add_patient_resource
+        return unless ig_resources.ig.version == '2.0.0'
+        
         resources_in_capability_statement << FHIR::CapabilityStatement::Rest::Resource.new(
           {
             type: 'Patient',

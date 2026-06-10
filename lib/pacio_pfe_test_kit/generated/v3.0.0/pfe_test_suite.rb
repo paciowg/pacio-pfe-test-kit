@@ -2,16 +2,18 @@ require 'inferno/dsl/oauth_credentials'
 require_relative '../../version'
 require_relative '../../custom_groups/v3.0.0/capability_statement_group'
 require_relative 'patient_group'
+require_relative 'condition_encounter_diagnosis_group'
+require_relative 'condition_problems_health_concerns_group'
+require_relative 'device_group'
+require_relative 'device_request_group'
+require_relative 'device_use_statement_group'
+require_relative 'diagnostic_report_group'
+require_relative 'goal_group'
+require_relative 'nutrition_order_group'
 require_relative 'observation_clinicaltest_group'
 require_relative 'observation_collection_group'
 require_relative 'observation_single_group'
-require_relative 'diagnostic_report_group'
-require_relative 'condition_encounter_diagnosis_group'
-require_relative 'condition_problems_health_concerns_group'
-require_relative 'goal_group'
 require_relative 'service_request_group'
-require_relative 'device_use_statement_group'
-require_relative 'nutrition_order_group'
 
 module PacioPFETestKit
   module PacioPFEV300
@@ -61,16 +63,18 @@ module PacioPFETestKit
       group from: :pfe_v300_capability_statement
 
       group from: :pfe_v300_patient
+      group from: :pfe_v300_condition_encounter_diagnosis
+      group from: :pfe_v300_condition_problems_health_concerns
+      group from: :pfe_v300_device
+      group from: :pfe_v300_device_request
+      group from: :pfe_v300_device_use_statement
+      group from: :pfe_v300_diagnostic_report
+      group from: :pfe_v300_goal
+      group from: :pfe_v300_nutrition_order
       group from: :pfe_v300_observation_clinicaltest
       group from: :pfe_v300_observation_collection
       group from: :pfe_v300_observation_single
-      group from: :pfe_v300_diagnostic_report
-      group from: :pfe_v300_condition_encounter_diagnosis
-      group from: :pfe_v300_condition_problems_health_concerns
-      group from: :pfe_v300_goal
       group from: :pfe_v300_service_request
-      group from: :pfe_v300_device_use_statement
-      group from: :pfe_v300_nutrition_order
 
       links [
         {

@@ -1,19 +1,4 @@
 require_relative 'condition_encounter_diagnosis/condition_encounter_diagnosis_patient_search_test'
-require_relative 'condition_encounter_diagnosis/condition_encounter_diagnosis_clinical_status_search_test'
-require_relative 'condition_encounter_diagnosis/condition_encounter_diagnosis_abatement_date_search_test'
-require_relative 'condition_encounter_diagnosis/condition_encounter_diagnosis_onset_date_search_test'
-require_relative 'condition_encounter_diagnosis/condition_encounter_diagnosis_recorded_date_search_test'
-require_relative 'condition_encounter_diagnosis/condition_encounter_diagnosis_subject_search_test'
-require_relative 'condition_encounter_diagnosis/condition_encounter_diagnosis_code_search_test'
-require_relative 'condition_encounter_diagnosis/condition_encounter_diagnosis_encounter_search_test'
-require_relative 'condition_encounter_diagnosis/condition_encounter_diagnosis_patient_recorded_date_search_test'
-require_relative 'condition_encounter_diagnosis/condition_encounter_diagnosis_patient_asserted_date_search_test'
-require_relative 'condition_encounter_diagnosis/condition_encounter_diagnosis_patient_category_clinical_status_search_test'
-require_relative 'condition_encounter_diagnosis/condition_encounter_diagnosis_patient_onset_date_search_test'
-require_relative 'condition_encounter_diagnosis/condition_encounter_diagnosis_patient_abatement_date_search_test'
-require_relative 'condition_encounter_diagnosis/condition_encounter_diagnosis_patient_clinical_status_search_test'
-require_relative 'condition_encounter_diagnosis/condition_encounter_diagnosis_patient_category_encounter_search_test'
-require_relative 'condition_encounter_diagnosis/condition_encounter_diagnosis_patient_code_search_test'
 require_relative 'condition_encounter_diagnosis/condition_encounter_diagnosis_patient_category_search_test'
 require_relative 'condition_encounter_diagnosis/condition_encounter_diagnosis_read_test'
 require_relative 'condition_encounter_diagnosis/condition_encounter_diagnosis_validation_test'
@@ -41,13 +26,6 @@ with this resource. This sequence will perform searches with the
 following parameters:
 
 * patient
-* clinical-status
-* abatement-date
-* onset-date
-* recorded-date
-* subject
-* code
-* encounter
 * patient + category
 
 ### Search Parameters
@@ -102,21 +80,6 @@ read succeeds.
       end
 
       test from: :pfe_v300_condition_encounter_diagnosis_patient_search_test
-      test from: :pfe_v300_condition_encounter_diagnosis_clinical_status_search_test
-      test from: :pfe_v300_condition_encounter_diagnosis_abatement_date_search_test
-      test from: :pfe_v300_condition_encounter_diagnosis_onset_date_search_test
-      test from: :pfe_v300_condition_encounter_diagnosis_recorded_date_search_test
-      test from: :pfe_v300_condition_encounter_diagnosis_subject_search_test
-      test from: :pfe_v300_condition_encounter_diagnosis_code_search_test
-      test from: :pfe_v300_condition_encounter_diagnosis_encounter_search_test
-      test from: :pfe_v300_condition_encounter_diagnosis_patient_recorded_date_search_test
-      test from: :pfe_v300_condition_encounter_diagnosis_patient_asserted_date_search_test
-      test from: :pfe_v300_condition_encounter_diagnosis_patient_category_clinical_status_search_test
-      test from: :pfe_v300_condition_encounter_diagnosis_patient_onset_date_search_test
-      test from: :pfe_v300_condition_encounter_diagnosis_patient_abatement_date_search_test
-      test from: :pfe_v300_condition_encounter_diagnosis_patient_clinical_status_search_test
-      test from: :pfe_v300_condition_encounter_diagnosis_patient_category_encounter_search_test
-      test from: :pfe_v300_condition_encounter_diagnosis_patient_code_search_test
       test from: :pfe_v300_condition_encounter_diagnosis_patient_category_search_test
       test from: :pfe_v300_condition_encounter_diagnosis_read_test
       test from: :pfe_v300_condition_encounter_diagnosis_validation_test

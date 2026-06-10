@@ -40,7 +40,6 @@ requirement of PACIO PFE v3.0.0.
           fixed_value_search: true,
           resource_type: 'Observation',
           search_param_names: ['patient', 'code'],
-          possible_status_search: true,
           token_search_params: ['code'],
           test_reference_variants: true,
           test_post_search: true

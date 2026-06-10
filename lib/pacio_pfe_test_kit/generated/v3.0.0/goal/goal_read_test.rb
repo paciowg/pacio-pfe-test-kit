@@ -6,7 +6,7 @@ module PacioPFETestKit
       include PacioPFETestKit::ReadTest
 
       title 'Server returns correct Goal resource from Goal read interaction'
-      description 'A server SHOULD support the Goal read interaction.'
+      description 'A server SHALL support the Goal read interaction.'
 
       id :pfe_v300_goal_read_test
 
