@@ -16,7 +16,7 @@ module PacioPFETestKit
       # is a patient compartment IG, Patient shall be included.
       def add_patient_resource
         return unless ig_resources.ig.version == '2.0.0'
-        
+
         resources_in_capability_statement << FHIR::CapabilityStatement::Rest::Resource.new(
           {
             type: 'Patient',
@@ -64,6 +64,8 @@ module PacioPFETestKit
       # PFE v2.0.0 has some parameter name with blank space. Replace blank space with dash
       # PFE v2.0.0 has parameter name "status" for Condition profile. The name should be "clinical-status"
       def fix_search_parameter_name
+        return unless ig_resources.ig.version == '2.0.0'
+        
         resources_in_capability_statement.each do |resource|
           resource.searchParam.each do |param|
             param.name.gsub!(' ', '-')
