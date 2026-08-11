@@ -194,9 +194,11 @@
     - :id: Observation.extension:event-location
       :path: extension
       :url: http://hl7.org/fhir/us/pacio-pfe/StructureDefinition/event-location
+      :modifier_extension: false
     - :id: Observation.extension:device-use
       :path: extension
       :url: http://hl7.org/fhir/us/pacio-pfe/StructureDefinition/device-patient-used
+      :modifier_extension: false
     :slices:
     - :slice_id: Observation.category:us-core
       :slice_name: us-core
@@ -508,9 +510,11 @@
     - :id: Observation.extension:event-location
       :path: extension
       :url: http://hl7.org/fhir/us/pacio-pfe/StructureDefinition/event-location
+      :modifier_extension: false
     - :id: Observation.extension:device-use
       :path: extension
       :url: http://hl7.org/fhir/us/pacio-pfe/StructureDefinition/device-patient-used
+      :modifier_extension: false
     :slices:
     - :slice_id: Observation.category:us-core
       :slice_name: us-core
@@ -827,9 +831,11 @@
     - :id: Observation.extension:event-location
       :path: extension
       :url: http://hl7.org/fhir/us/pacio-pfe/StructureDefinition/event-location
+      :modifier_extension: false
     - :id: Observation.extension:device-use
       :path: extension
       :url: http://hl7.org/fhir/us/pacio-pfe/StructureDefinition/device-patient-used
+      :modifier_extension: false
     :slices:
     - :slice_id: Observation.category:us-core
       :slice_name: us-core
@@ -1190,9 +1196,11 @@
     - :id: DiagnosticReport.extension:event-location
       :path: extension
       :url: http://hl7.org/fhir/us/pacio-pfe/StructureDefinition/event-location
+      :modifier_extension: false
     - :id: DiagnosticReport.extension:assistance-required
       :path: extension
       :url: http://hl7.org/fhir/us/pacio-pfe/StructureDefinition/assistance-required
+      :modifier_extension: false
     :slices:
     - :slice_id: DiagnosticReport.category:us-core
       :slice_name: us-core
@@ -1852,6 +1860,7 @@
     - :id: Condition.extension:assertedDate
       :path: extension
       :url: http://hl7.org/fhir/StructureDefinition/condition-assertedDate
+      :modifier_extension: false
     :slices:
     - :slice_id: Condition.category:us-core
       :slice_name: us-core
@@ -2220,6 +2229,7 @@
     - :id: Condition.extension:assertedDate
       :path: extension
       :url: http://hl7.org/fhir/StructureDefinition/condition-assertedDate
+      :modifier_extension: false
     :slices:
     - :slice_id: Condition.category:us-core
       :slice_name: us-core

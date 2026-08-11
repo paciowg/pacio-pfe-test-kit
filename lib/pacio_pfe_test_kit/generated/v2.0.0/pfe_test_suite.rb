@@ -37,7 +37,7 @@ module PacioPFETestKit
       id :pfe_v200
 
       fhir_resource_validator do
-        igs 'hl7.fhir.us.pacio-pfe#2.0.0', 'hl7.fhir.us.core#6.1.0'
+        igs 'hl7.fhir.us.pacio-pfe#2.0.0', 'hl7.fhir.us.core#9.0.0'
         message_filters = VALIDATION_MESSAGE_FILTERS
 
         exclude_message do |message|

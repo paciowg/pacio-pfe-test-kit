@@ -295,6 +295,7 @@
   - :id: Condition.extension:assertedDate
     :path: extension
     :url: http://hl7.org/fhir/StructureDefinition/condition-assertedDate
+    :modifier_extension: false
   :slices:
   - :slice_id: Condition.category:us-core
     :slice_name: us-core

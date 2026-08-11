@@ -218,9 +218,11 @@
   - :id: DiagnosticReport.extension:event-location
     :path: extension
     :url: http://hl7.org/fhir/us/pacio-pfe/StructureDefinition/event-location
+    :modifier_extension: false
   - :id: DiagnosticReport.extension:assistance-required
     :path: extension
     :url: http://hl7.org/fhir/us/pacio-pfe/StructureDefinition/assistance-required
+    :modifier_extension: false
   :slices:
   - :slice_id: DiagnosticReport.category:us-core
     :slice_name: us-core

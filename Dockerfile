@@ -6,9 +6,10 @@ RUN mkdir -p $INSTALL_PATH
 
 WORKDIR $INSTALL_PATH
 
-ADD lib/inferno_template/version.rb $INSTALL_PATH/lib/inferno_template/version.rb
+ADD lib/pacio_pfe_test_kit/version.rb $INSTALL_PATH/lib/pacio_pfe_test_kit/version.rb
 ADD *.gemspec $INSTALL_PATH
 ADD Gemfile* $INSTALL_PATH
+#COPY --from=pacio-inferno-core / /opt/pacio-inferno-core/
 RUN gem install bundler
 # The below RUN line is commented out for development purposes, because any change to the
 # required gems will break the dockerfile build process.
